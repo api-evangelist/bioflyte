@@ -1,23 +1,183 @@
 aid: bioflyte
 name: BioFlyte
-description: 'BioFlyte is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'BioFlyte, Inc. is an Albuquerque, New Mexico based biodefense instrument company
+  founded in 2020 by Charles Call that commercializes a fieldable class of aerosol time-of-flight
+  mass spectrometers for identifying airborne biological and low-volatility chemical threats. Its
+  BioTOF z200 bioaerosol identifier autonomously collects, detects and identifies airborne
+  biothreats for critical-infrastructure sites such as airports, arenas, transit hubs and federal
+  buildings, and its MailScreen z200 workstation identifies hazardous biological powders in mail
+  and parcels. The instruments pair an aerosol sample collector with robotic sample handling,
+  archiving and UV-laser ionization, then match the resulting mass spectra against a threat
+  library using AI/ML algorithms; the threat library and software updates are delivered through
+  the cloud and the sensor is operated locally from a Windows-based tablet Command Console.
+  BioFlyte has raised a $1.25M seed round (2020), a $6.1M Series A (2022) and a $5.4M Series B
+  (2023), holds a U.S. Department of Homeland Security SAFETY Act Qualified Anti-Terrorism
+  Technology designation and a U.S. Air Force SBIR Phase II contract, and has run deployments and
+  pilots with Pittsburgh International Airport, SoBran and Los Alamos National Laboratory.
+  BioFlyte publishes no developer program, API documentation, SDK, portal or pricing page. It
+  does run two machine-readable API surfaces that a member of the public can reach: the fleet
+  and alerting API behind its customer portal at portal.bioflyte.com, an ASP.NET Core service
+  ("AdminWeb") whose OpenAPI 3.0.1 description is served openly at /swagger/v1/swagger.json even
+  though every one of its 40 operations redirects an unauthenticated caller to a login page; and
+  the anonymously readable WordPress REST API (wp/v2) on www.bioflyte.com, which serves the
+  press-release newsroom, the Resources library of blog posts and whitepapers, the marketing
+  pages, the media library, taxonomies and site search as JSON.'
 url: https://raw.githubusercontent.com/api-evangelist/bioflyte/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+image: https://www.bioflyte.com/wp-content/uploads/2023/07/cropped-favicon-512.png
 specificationVersion: '0.20'
 created: '2026-08-07'
 modified: '2026-08-07'
 tags:
 - Company
-apis: []
+- Biodefense
+- Biothreat Detection
+- Mass Spectrometry
+- Aerosol Monitoring
+- Homeland Security
+- Critical Infrastructure
+- Public Safety
+- Sensors
+- Hardware
+- Artificial Intelligence
+- Content
+apis:
+- aid: bioflyte:portal
+  name: BioFlyte Customer Portal API (AdminWeb)
+  description: 'The HTTP API behind portal.bioflyte.com, the authenticated web console BioFlyte
+    customers use to manage deployed BioTOF sensors. The service is an ASP.NET Core (Kestrel)
+    application titled "AdminWeb" that publishes an OpenAPI 3.0.1 description openly at
+    https://portal.bioflyte.com/swagger/v1/swagger.json together with a Swagger UI at
+    /swagger/index.html. The 40 operations are grouped by the Swagger tags Alert, Client, Files,
+    Filters, Locations, Organization, Permissions, RequestHelp and Test, and cover alert settings
+    and recipients, device/organization/location/user/role/telemetry-type select lists, a device
+    location map, file upload and download, permission and role resolution, organization
+    switching, a help request, and sample/alert webhook test hooks. Its declared schemas
+    (NewSampleReceived, AlertsUpdated, PermissionsReq, LoadLocationMapForDeviceRequest) confirm
+    the domain: devices identified by UUID emitting samples and alerts against organizations and
+    locations. The DESCRIPTION is public; the API is not. Every operation probed anonymously on
+    2026-08-07 returned HTTP 302 to
+    https://portal.bioflyte.com/identity/account/login, and no securitySchemes, servers,
+    operationIds, summaries, descriptions or non-200 responses are declared in the document.
+    BioFlyte does not document, announce or support this as a developer API — it is the private
+    backend of its own console, captured here verbatim as published.'
+  humanURL: https://portal.bioflyte.com/
+  baseURL: https://portal.bioflyte.com
+  tags:
+  - Devices
+  - Alerts
+  - Telemetry
+  - Locations
+  - Organizations
+  - Permissions
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/bioflyte-portal-openapi-original.json
+  - type: Overlay
+    url: overlays/bioflyte-portal-overlay.yaml
+  - type: Login
+    url: https://portal.bioflyte.com/identity/account/login
+  - type: SwaggerUI
+    url: https://portal.bioflyte.com/swagger/index.html
+- aid: bioflyte:content
+  name: BioFlyte Content API (WordPress REST wp/v2)
+  description: 'The anonymously readable WordPress REST API that www.bioflyte.com serves at
+    /wp-json/wp/v2 — press releases and news (the `post` type, 36 published across the `news` and
+    `press-release` categories), the Resources library of blog posts and whitepapers (the
+    `resource` custom post type, 6 published under the `resources-category` terms Blog and
+    Whitepapers), the nine marketing pages, a 374-item media library, taxonomies (`category`,
+    `post_tag`, `resources-category`, `project_category`, `project_tag`, `difl_page_category`),
+    users and a site-wide search endpoint, all as JSON with page/per_page pagination and
+    X-WP-Total / X-WP-TotalPages response headers. This is the CMS content API, not a BioFlyte
+    product API — the BioTOF z200 and MailScreen z200 instruments expose no public API. BioFlyte
+    publishes no OpenAPI for it, so the definition in this repo was derived mechanically from the
+    live route-discovery document at https://www.bioflyte.com/wp-json/.'
+  humanURL: https://www.bioflyte.com/category/press-release/
+  baseURL: https://www.bioflyte.com/wp-json/wp/v2
+  tags:
+  - Content
+  - News
+  - Press Releases
+  - Resources
+  - Media
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/bioflyte-content-openapi.yml
+  - type: Overlay
+    url: overlays/bioflyte-content-overlay.yaml
+  - type: DataModel
+    url: data-model/bioflyte-data-model.yml
+  - type: ErrorCatalog
+    url: errors/bioflyte-problem-types.yml
+  - type: Examples
+    url: examples/bioflyte-examples.yml
+x-enrichment:
+  date: '2026-08-07'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/bioflyte-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/bioflyte-agentic-access.yml
+- type: Authentication
+  url: authentication/bioflyte-authentication.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.bioflyte.com/
+- type: Products
+  url: https://www.bioflyte.com/products/
+- type: Technology
+  url: https://www.bioflyte.com/technology/
+- type: MarketSegments
+  url: https://www.bioflyte.com/market-segments/
+- type: Blog
+  url: https://www.bioflyte.com/resources/
+- type: BlogRSS
+  url: https://www.bioflyte.com/feed/
+- type: News
+  url: https://www.bioflyte.com/category/news/
+- type: Press
+  url: https://www.bioflyte.com/category/press-release/
+- type: Team
+  url: https://www.bioflyte.com/team/
+- type: Careers
+  url: https://www.bioflyte.com/careers/
+- type: TermsOfService
+  url: https://www.bioflyte.com/terms/
+- type: PrivacyPolicy
+  url: https://www.bioflyte.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bioflyte
+- type: Twitter
+  url: https://twitter.com/bioflyte
+- type: YouTube
+  url: https://www.youtube.com/channel/UCyQX9veCJkSi6pIgQ9dA1PQ
+- type: Packages
+  url: packages/bioflyte-packages.yml
+- type: LLMsTxt
+  url: llms/bioflyte-llms.txt
+- type: WellKnown
+  url: well-known/bioflyte-well-known.yml
+- type: Conventions
+  url: conventions/bioflyte-conventions.yml
+- type: Conformance
+  url: conformance/bioflyte-conformance.yml
+- type: Lifecycle
+  url: lifecycle/bioflyte-lifecycle.yml
+- type: MCPServer
+  url: mcp/bioflyte-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/bioflyte-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
