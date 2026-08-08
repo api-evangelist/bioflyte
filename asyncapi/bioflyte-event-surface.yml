@@ -1,0 +1,61 @@
+generated: '2026-08-07'
+method: derived
+source: openapi/bioflyte-portal-openapi-original.json
+spec_type: none
+published_asyncapi: false
+published_webhook_catalog: false
+pointer_wired: false
+note: >-
+  BioFlyte publishes NO AsyncAPI document and NO webhook catalogue, so neither an `AsyncAPI` nor
+  a `Webhooks` pointer is wired in apis.yml. This file exists to record, without fabricating a
+  spec, that an event surface demonstrably exists behind the customer portal — the published
+  AdminWeb OpenAPI carries event payload schemas and event test hooks that only make sense if
+  devices push samples and alerts into the platform. What follows is observed evidence from the
+  provider's own document, not an event contract. Anyone wanting the real contract has to ask
+  BioFlyte for it.
+evidence:
+- kind: schema
+  name: NewSampleReceived
+  source: openapi/bioflyte-portal-openapi-original.json#/components/schemas/NewSampleReceived
+  fields:
+  - {name: deviceId, type: string, format: uuid}
+  - {name: sampleId, type: string, format: uuid}
+  reading: >-
+    A sensor-originated event announcing that a new aerosol sample has been collected and
+    ingested for the identified device.
+- kind: schema
+  name: AlertsUpdated
+  source: openapi/bioflyte-portal-openapi-original.json#/components/schemas/AlertsUpdated
+  fields:
+  - {name: deviceId, type: string, format: uuid}
+  - {name: timestamp, type: string, format: date-time}
+  - {name: alertId, type: array, items: uuid, nullable: true}
+  reading: >-
+    A fan-out event carrying one or more alert identifiers raised against a device at a point in
+    time — the threat-detection notification path.
+- kind: operation
+  name: POST /TestOnSampleReceived
+  tag: Test
+  request_schema: NewSampleReceived
+  reading: An operation that injects a synthetic NewSampleReceived event, i.e. a test trigger for the event pipeline.
+- kind: operation
+  name: POST /TestOnAlertsUpdated
+  tag: Test
+  request_schema: AlertsUpdated
+  reading: An operation that injects a synthetic AlertsUpdated event.
+- kind: operation
+  name: GET /Test/TestOnSampleStatusUpdated
+  tag: Test
+  reading: >-
+    A third event test hook, for a sample-status-change event whose payload schema is not
+    declared in the document.
+gaps:
+- finding: >-
+    Three event test hooks and two event payload schemas are published, but the events
+    themselves are not. There is no channel, no transport, no delivery guarantee, no retry or
+    signature contract, and no subscriber-facing documentation of any kind.
+  remedy: >-
+    Publish an AsyncAPI 3.x document for the sample and alert events (channels, message schemas,
+    and the transport and security bindings), or at minimum a webhook reference page. The
+    payload schemas already exist in the OpenAPI — the missing piece is the channel and delivery
+    contract.

@@ -42,5 +42,18 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BioFlyte is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+BioFlyte, Inc. is an Albuquerque, New Mexico biodefense instrument company founded in 2020 that
+builds fieldable aerosol time-of-flight mass spectrometers for identifying airborne biological and
+low-volatility chemical threats — the BioTOF z200 for critical infrastructure and the MailScreen
+z200 for mail and parcel screening.
+
+BioFlyte publishes no developer program, API documentation, SDK or pricing. Two machine-readable
+API surfaces are reachable without credentials and are profiled here:
+
+- **Customer Portal API (AdminWeb)** — https://portal.bioflyte.com/swagger/v1/swagger.json —
+  BioFlyte's own OpenAPI 3.0.1, served openly, describing 40 device-fleet, alerting, location and
+  permission operations. The description is public; every operation returns 302 to a login page.
+- **Content API (WordPress REST wp/v2)** — https://www.bioflyte.com/wp-json/wp/v2 — anonymously
+  readable press releases, whitepapers, pages, media, taxonomies and search.
+
+- https://www.bioflyte.com/

@@ -1,0 +1,111 @@
+generated: '2026-08-07'
+method: derived
+source: >-
+  Live responses observed on www.bioflyte.com/wp-json and portal.bioflyte.com 2026-08-07, plus
+  the WordPress REST error contract reflected in openapi/bioflyte-content-openapi.yml and the
+  (empty) error contract in openapi/bioflyte-portal-openapi-original.json
+format: wordpress-rest
+rfc9457: false
+envelope:
+  fields:
+  - {name: code, type: string, meaning: machine-readable error slug}
+  - {name: message, type: string, meaning: human-readable message}
+  - {name: data.status, type: integer, meaning: HTTP status code, mirrored in the response status}
+  content_type: application/json
+  note: >-
+    Not application/problem+json — the WordPress REST API predates RFC 9457 and uses its own
+    envelope. Recorded as-is; nothing normalised or invented. The portal API declares no error
+    envelope at all.
+problems:
+- api: bioflyte:content
+  status: 401
+  code: rest_forbidden
+  title: Sorry, you are not allowed to do that.
+  meaning: The request requires authentication (or higher capabilities) than the caller has.
+  observed_on:
+  - GET /wp-json/wp-abilities/v1/abilities
+  - GET /wp-json/wp/v2/settings
+  - GET /wp-json/wp/v2/themes
+  - GET /wp-json/wp/v2/plugins
+  - GET /wp-json/wp/v2/menus
+  observed_body: '{"code":"rest_forbidden","message":"Sorry, you are not allowed to do that.","data":{"status":401}}'
+  remediation: >-
+    Authenticate with a WordPress Application Password (HTTP Basic) issued from
+    https://www.bioflyte.com/wp-admin/authorize-application.php, or a logged-in cookie plus
+    X-WP-Nonce.
+- api: bioflyte:content
+  status: 404
+  code: rest_no_route
+  title: No route was found matching the URL and request method.
+  meaning: The requested path is not a registered REST route in any of the 14 namespaces.
+  remediation: Enumerate valid routes from https://www.bioflyte.com/wp-json/ before calling.
+- api: bioflyte:content
+  status: 404
+  code: rest_post_invalid_id
+  title: Invalid post ID.
+  meaning: A single-resource route was called with an id that does not exist or is not visible.
+  source_operation: openapi/bioflyte-content-openapi.yml#getPostsById
+- api: bioflyte:content
+  status: 404
+  code: rest_term_invalid
+  title: Term does not exist.
+  meaning: >-
+    A taxonomy single-resource route (categories, tags, resources-category, project_category,
+    project_tag, difl_page_category) was called with an unknown term id.
+  source_operation: openapi/bioflyte-content-openapi.yml#getResourcesCategoryById
+- api: bioflyte:content
+  status: 400
+  code: rest_invalid_param
+  title: Invalid parameter(s).
+  meaning: >-
+    One or more query/body parameters failed the schema declared in the route args (enum,
+    minimum/maximum, or type). data.params names the offending parameters.
+  source_operation: openapi/bioflyte-content-openapi.yml#getPosts
+  remediation: >-
+    per_page is capped at 100 and page is minimum 1; orderby, status and context are
+    enum-constrained. The constraints are carried on each operation in the derived OpenAPI.
+- api: bioflyte:content
+  status: 403
+  code: rest_cookie_invalid_nonce
+  title: Cookie check failed.
+  meaning: A cookie-authenticated write was attempted without a valid X-WP-Nonce.
+- api: bioflyte:content
+  status: 401
+  code: rest_cannot_view
+  title: Sorry, you are not allowed to view this resource.
+  meaning: >-
+    Applies to the edit context and to draft/private resources; anonymous callers may only read
+    published records in view or embed context.
+- api: bioflyte:portal
+  status: 302
+  code: null
+  title: Redirect to /identity/account/login
+  meaning: >-
+    The AdminWeb API's response to any unauthenticated call. It is not an error document — no
+    body, no code, no machine-readable signal. An agent or client that follows redirects
+    receives an HTML login page with HTTP 200, which is the classic soft-failure: a 200 that
+    means "denied".
+  observed_on:
+  - GET https://portal.bioflyte.com/GetClientCountryCodeByIp
+  - GET https://portal.bioflyte.com/
+  observed_headers: 'Location: https://portal.bioflyte.com/identity/account/login?ReturnUrl=%2FGetClientCountryCodeByIp'
+  remediation: >-
+    Establish an ASP.NET Core Identity session first. There is no documented token or API-key
+    path.
+gaps:
+- api: bioflyte:portal
+  finding: >-
+    All 40 operations in the AdminWeb OpenAPI declare a single response, 200 "OK". No 4xx or 5xx
+    response, no error schema, no problem+json media type and no response description beyond
+    "OK" exists anywhere in the document. There is nothing to derive an error catalogue from —
+    the entries above for bioflyte:portal are observed behaviour, not declared contract.
+  remedy: >-
+    Declare 400/401/403/404/500 responses with a shared error schema on the AdminWeb operations,
+    and return application/problem+json (RFC 9457) instead of a 302 to an HTML login page for
+    unauthenticated API calls.
+note: >-
+  BioFlyte publishes no error reference — it publishes no developer documentation at all. The
+  content-API codes above are the WordPress REST contract as observed live on www.bioflyte.com;
+  the 401 rest_forbidden entry was captured verbatim from the abilities and settings probes.
+  Nothing was copied from generic WordPress documentation without an observation or a
+  route-level schema constraint behind it.

@@ -1,0 +1,152 @@
+generated: '2026-08-07'
+method: derived
+source: >-
+  openapi/bioflyte-content-openapi.yml (derived from https://www.bioflyte.com/wp-json/) and
+  openapi/bioflyte-portal-openapi-original.json, plus live response headers observed on
+  GET /wp-json/wp/v2/posts and OPTIONS /wp-json/wp/v2/posts, 2026-08-07
+apis:
+- bioflyte:content
+- bioflyte:portal
+authentication:
+  content_api:
+    anonymous_read: true
+    scheme: WordPress Application Passwords over HTTP Basic
+    authorization_endpoint: https://www.bioflyte.com/wp-admin/authorize-application.php
+    browser_scheme: logged-in cookie + X-WP-Nonce header
+  portal_api:
+    anonymous_read: false
+    scheme: ASP.NET Core Identity — cookie session established at /identity/account/login
+    observed: >-
+      GET https://portal.bioflyte.com/GetClientCountryCodeByIp -> 302 Location
+      https://portal.bioflyte.com/identity/account/login?ReturnUrl=%2FGetClientCountryCodeByIp
+    note: >-
+      The AdminWeb OpenAPI declares NO components.securitySchemes and applies no security to any
+      operation, so the document does not describe how to authenticate. The redirect above is
+      the only observable contract.
+  artifact: authentication/bioflyte-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No idempotency key header or parameter exists on any of the 305 WordPress routes or the 40
+    AdminWeb operations, and none is documented. No Idempotency pointer is wired in apis.yml —
+    BioFlyte has no idempotency contract, and asserting one would be fabrication.
+pagination:
+  content_api:
+    style: page-number
+    request_params:
+    - {name: page, type: integer, default: 1, minimum: 1}
+    - {name: per_page, type: integer, default: 10, minimum: 1, maximum: 100}
+    - {name: offset, type: integer, note: available on collection routes}
+    response_headers:
+    - {name: X-WP-Total, meaning: total items in the collection}
+    - {name: X-WP-TotalPages, meaning: total pages at the current per_page}
+    link_header: 'RFC 8288 Link header with rel="next" / rel="prev"'
+    observed: >-
+      GET /wp-json/wp/v2/posts?per_page=1 -> x-wp-total: 36, x-wp-totalpages: 36,
+      link: <https://www.bioflyte.com/wp-json/wp/v2/posts?per_page=1&page=2>; rel="next"
+  portal_api:
+    style: none-declared
+    note: >-
+      No paging parameters appear on any AdminWeb operation. Most are POST "Load*" calls whose
+      request bodies carry only ids, so any paging is implicit and undocumented.
+field_selection:
+  sparse_fields:
+    param: _fields
+    note: comma-separated list of top-level fields to return (content API only)
+  expansion:
+    param: _embed
+    note: >-
+      Inlines linked resources (author, wp:featuredmedia, wp:term, replies) into _embedded,
+      driven by the _links relations each resource carries.
+  context:
+    param: context
+    values: [view, embed, edit]
+    default: view
+    note: edit context requires authentication
+ordering_and_filtering:
+  params: [search, search_semantics, order, orderby, slug, status, after, before, modified_after,
+    modified_before, include, exclude, categories, categories_exclude, tags, tags_exclude, author,
+    parent, menu_order, sticky]
+  custom_taxonomy_filters: [resources-category, project_category, project_tag, difl_page_category]
+  note: taken verbatim from the route args in the discovery document
+metadata:
+  field: meta
+  note: Registered post meta, exposed on every content type in the wp/v2 namespace.
+request_tracing:
+  request_id_header: null
+  note: >-
+    No request-id or correlation header is emitted by either API. Cloudflare returns cf-ray on
+    the content host, which is an edge trace identifier, not an application request id. The
+    portal (Kestrel) emits no trace header at all.
+versioning:
+  content_api:
+    scheme: uri-path-namespace
+    current: wp/v2
+    note: >-
+      Version is carried by the WordPress REST namespace segment and tracks WordPress core, not
+      a BioFlyte release train.
+  portal_api:
+    scheme: swagger-document-name
+    current: v1
+    declared_info_version: '1.0'
+    note: >-
+      The only version signal is the "v1" segment in /swagger/v1/swagger.json and info.version
+      "1.0". The API paths themselves are unversioned (e.g. POST /LoadAlertSetting), so there is
+      no way to pin a version at call time.
+  artifact: lifecycle/bioflyte-lifecycle.yml
+error_envelope:
+  content_api:
+    format: wordpress-rest
+    rfc9457: false
+    shape: '{"code": "<string>", "message": "<human string>", "data": {"status": <int>}}'
+    observed: '{"code":"rest_forbidden","message":"Sorry, you are not allowed to do that.","data":{"status":401}}'
+  portal_api:
+    format: undeclared
+    rfc9457: false
+    note: >-
+      Every one of the 40 AdminWeb operations declares exactly one response — 200 "OK". No 4xx
+      or 5xx response, no error schema and no problem+json media type is declared anywhere in
+      the document. The only error behaviour observable anonymously is the 302 to the login page.
+  artifact: errors/bioflyte-problem-types.yml
+rate_limiting:
+  documented: false
+  headers_observed: []
+  note: >-
+    No X-RateLimit-* or Retry-After headers observed on any anonymous request to either host.
+    The content host sits behind Cloudflare in front of WP Engine, so edge rate limiting may
+    exist without being advertised. robots.txt on the content host sets Crawl-delay: 10.
+caching:
+  headers_observed:
+  - 'cache-control: max-age=2419200, must-revalidate'
+  - 'x-cacheable: YES:2419200.000'
+  - 'x-cache: HIT (WP Engine)'
+  - 'cf-cache-status: DYNAMIC'
+  note: >-
+    28-day cache TTL advertised on wp-json collection responses — unusually long for a content
+    API, which means newly published press releases can be served stale from the edge. The
+    portal sends cache-control: no-cache,no-store.
+robots:
+  api_indexing: 'x-robots-tag: noindex on wp-json responses'
+cors:
+  content_api:
+    access_control_allow_origin: reflected (observed https://example.com echoed back)
+    access_control_allow_credentials: true
+    access_control_allow_methods: [OPTIONS, GET, POST, PUT, PATCH, DELETE]
+    access_control_allow_headers: [Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type]
+    access_control_expose_headers: [X-WP-Total, X-WP-TotalPages, Link]
+    note: WordPress core default — origin is reflected rather than allow-listed.
+security_headers_observed:
+  www.bioflyte.com:
+  - 'strict-transport-security: max-age=31536000; includeSubDomains; preload'
+  - 'x-content-type-options: nosniff'
+  - 'x-frame-options: DENY'
+  - 'x-xss-protection: 1; mode=block'
+  - 'referrer-policy: no-referrer-when-downgrade'
+  - 'x-permitted-cross-domain-policies: none'
+  - 'feature-policy: camera ''none''; fullscreen ''self''; geolocation *; microphone ''self'''
+  portal.bioflyte.com:
+  - 'strict-transport-security: max-age=2592000'
+  - 'x-frame-options: SAMEORIGIN'
+  note: >-
+    Observed values are quoted verbatim; several headers on the content host are emitted with
+    literal surrounding double quotes, which is a misconfiguration in the origin's header rules.

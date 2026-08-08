@@ -1,0 +1,142 @@
+generated: '2026-08-07'
+method: derived
+source: >-
+  Live anonymous requests against https://www.bioflyte.com/wp-json/wp/v2 on 2026-08-07. Every
+  request and response below was actually executed; response bodies are verbatim (truncated
+  where noted). No example is synthetic.
+note: >-
+  Only the content API has examples. The portal API (bioflyte:portal) cannot be exercised
+  anonymously — every operation returns 302 to /identity/account/login — so no request/response
+  pair could be captured for it, and none was invented.
+api: bioflyte:content
+base_url: https://www.bioflyte.com/wp-json/wp/v2
+examples:
+- name: List press releases (newest first)
+  operationId: getPosts
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/posts?per_page=1&_fields=id,date,slug,status,type,link,title,excerpt,categories,tags,featured_media
+  response:
+    status: 200
+    headers:
+      x-wp-total: '36'
+      x-wp-totalpages: '36'
+      link: <https://www.bioflyte.com/wp-json/wp/v2/posts?per_page=1&page=2>; rel="next"
+      cache-control: max-age=2419200, must-revalidate
+    body:
+    - id: 281702
+      date: '2025-09-23T09:00:25'
+      slug: bioflyte-los-alamos-biothreat-detection
+      status: publish
+      type: post
+      link: https://www.bioflyte.com/press-release/bioflyte-los-alamos-biothreat-detection/
+      title:
+        rendered: BioFlyte Partners with Los Alamos National Laboratory to Optimize Modeling and
+          Simulation Tools for Biothreat Detection and Response
+      featured_media: 0
+      categories: [16]
+      tags: []
+- name: List the taxonomy that classifies press releases
+  operationId: getCategories
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/categories?per_page=100&_fields=id,slug,name,count
+  response:
+    status: 200
+    body:
+    - {id: 15, count: 18, name: News, slug: news}
+    - {id: 16, count: 18, name: Press Release, slug: press-release}
+    - {id: 1, count: 0, name: Uncategorized, slug: uncategorized}
+- name: List whitepapers only, by filtering the Resources taxonomy
+  operationId: getResource
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/resource?per_page=1&resources-category=31&_fields=id,date,slug,link,title,resources-category,featured_media
+  response:
+    status: 200
+    body:
+    - id: 281071
+      date: '2023-07-21T21:56:58'
+      slug: impact-of-an-anthrax-attack-on-a-us-airport-and-how-it-can-be-mitigated
+      link: https://www.bioflyte.com/resource/whitepapers/impact-of-an-anthrax-attack-on-a-us-airport-and-how-it-can-be-mitigated/
+      title:
+        rendered: Impact of an Anthrax Attack on a US Airport and How it can be Mitigated
+      featured_media: 281058
+      resources-category: [31]
+  note: >-
+    resources-category term 31 is "Whitepapers" (2 records); term 30 is "Blog" (4 records). The
+    permalink pattern /resource/{term}/{slug}/ makes the term part of the public URL.
+- name: Resolve the Resources taxonomy terms
+  operationId: getResourcesCategory
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/resources-category?per_page=100&_fields=id,slug,name,count
+  response:
+    status: 200
+    body:
+    - {id: 30, count: 4, name: Blog, slug: blog}
+    - {id: 31, count: 2, name: Whitepapers, slug: whitepapers}
+- name: Search across every content type at once
+  operationId: getSearch
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/search?search=anthrax&per_page=3
+  response:
+    status: 200
+    body:
+    - id: 281071
+      title: Impact of an Anthrax Attack on a US Airport and How it can be Mitigated
+      url: https://www.bioflyte.com/resource/whitepapers/impact-of-an-anthrax-attack-on-a-us-airport-and-how-it-can-be-mitigated/
+      type: post
+      subtype: resource
+    - id: 281615
+      title: BioFlyte Awarded SBIR Phase I Contract by U.S. Air Force to Advance its Aerosol
+        Chem/Biothreat Detection and Identification Technology for Critical Infrastructure
+      url: https://www.bioflyte.com/press-release/bioflyte-awarded-sbir-phase-i/
+      type: post
+      subtype: post
+    - id: 281463
+      title: BioFlyte Enhances SoBran's Mail Screening Operations with Streamlined Chemical and
+        Biological Aerosol Threat Detection Technology
+      url: https://www.bioflyte.com/press-release/bioflyte-enhances-sobrans-mail-screening-operations-with-streamlined-chemical-and-biological-aerosol-threat-detection-technology/
+      type: post
+      subtype: post
+  note: >-
+    Search returns 51 indexed items. Each hit carries _links.self pointing at the concrete
+    collection route for that subtype, so a client can follow a hit straight to the full record.
+- name: Enumerate the registered content types
+  operationId: getTypes
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/types
+  response:
+    status: 200
+    body_summary:
+      post: {name: Posts, rest_base: posts, taxonomies: [category, post_tag]}
+      page: {name: Pages, rest_base: pages, taxonomies: [difl_page_category]}
+      attachment: {name: Media, rest_base: media, taxonomies: []}
+      project: {name: Projects, rest_base: project, taxonomies: [project_category, project_tag]}
+      resource: {name: Resources, rest_base: resource, taxonomies: [post_tag, resources-category]}
+    note: Truncated to the content types; editor plumbing types (wp_block, wp_template, …) omitted.
+error_examples:
+- name: An anonymous call to a privileged route
+  request:
+    method: GET
+    url: https://www.bioflyte.com/wp-json/wp/v2/settings
+  response:
+    status: 401
+    body: {code: rest_forbidden, message: Sorry, you are not allowed to do that., data: {status: 401}}
+  note: Same envelope returned by /wp/v2/themes, /wp/v2/plugins, /wp/v2/menus and /wp-json/wp-abilities/v1/abilities.
+- name: An anonymous call to the portal API
+  api: bioflyte:portal
+  request:
+    method: GET
+    url: https://portal.bioflyte.com/GetClientCountryCodeByIp
+  response:
+    status: 302
+    headers:
+      location: https://portal.bioflyte.com/identity/account/login?ReturnUrl=%2FGetClientCountryCodeByIp
+    body: ''
+  note: >-
+    No error document, no code, no JSON. A client that follows the redirect gets an HTML login
+    page with HTTP 200 — a success status for a denied call.

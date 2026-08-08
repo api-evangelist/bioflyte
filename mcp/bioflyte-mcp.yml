@@ -1,0 +1,73 @@
+generated: '2026-08-07'
+method: derived
+status: candidate
+source: openapi/bioflyte-content-openapi.yml
+search_result:
+  official_hosted_server: none
+  probes:
+  - {url: 'https://mcp.bioflyte.com/mcp', method: POST tools/list, status: '000', note: host does not resolve (NXDOMAIN)}
+  - {url: 'https://www.bioflyte.com/mcp', method: POST tools/list, status: 404}
+  - {url: 'https://www.bioflyte.com/wp-json/mcp', method: POST tools/list, status: 404, note: no `mcp` namespace registered in the WordPress route index}
+  - {url: 'https://portal.bioflyte.com/mcp', method: POST tools/list, status: 404}
+  - {url: 'https://www.bioflyte.com/.well-known/mcp.json', method: GET, status: 404}
+  - {url: 'https://registry.modelcontextprotocol.io/v0/servers?search=bioflyte', method: GET, status: 200, note: 0 servers}
+  third_party: []
+  finding: >-
+    BioFlyte operates no MCP server, first-party or third-party, and publishes no agent-facing
+    surface of any kind. The WordPress Abilities API registry (wp-abilities/v1) is present on
+    the marketing host but returns 401 anonymously and has no MCP adapter bound to it.
+server:
+  name: bioflyte-content
+  transport: http
+  url: null
+  note: >-
+    CANDIDATE ONLY — this server does not exist. The tool list below is what an MCP server over
+    BioFlyte's anonymously readable content API would expose, derived one-to-one from real
+    operationIds in openapi/bioflyte-content-openapi.yml. Nothing here is published by BioFlyte
+    and no endpoint should be called. The portal API at portal.bioflyte.com was deliberately
+    EXCLUDED: every one of its operations requires an authenticated session, so no tool over it
+    could be exercised, and most of it is write-shaped RPC against safety-monitoring devices.
+tools:
+- name: search_bioflyte
+  description: Search across BioFlyte press releases, resources and marketing pages in one call. 51 items indexed.
+  source_operation: openapi/bioflyte-content-openapi.yml#getSearch
+- name: list_press_releases
+  description: List BioFlyte press releases and news items, newest first. 36 published.
+  source_operation: openapi/bioflyte-content-openapi.yml#getPosts
+- name: get_press_release
+  description: Retrieve a single press release or news item by id.
+  source_operation: openapi/bioflyte-content-openapi.yml#getPostsById
+- name: list_resources
+  description: List the Resources library — blog posts and whitepapers. 6 published.
+  source_operation: openapi/bioflyte-content-openapi.yml#getResource
+- name: get_resource
+  description: Retrieve a single resource (blog post or whitepaper) by id.
+  source_operation: openapi/bioflyte-content-openapi.yml#getResourceById
+- name: list_resource_categories
+  description: List the Resources taxonomy terms — Blog and Whitepapers — with record counts.
+  source_operation: openapi/bioflyte-content-openapi.yml#getResourcesCategory
+- name: list_news_categories
+  description: List the press/news taxonomy terms with record counts.
+  source_operation: openapi/bioflyte-content-openapi.yml#getCategories
+- name: list_pages
+  description: List the marketing pages (products, technology, market segments, team, careers, terms, privacy).
+  source_operation: openapi/bioflyte-content-openapi.yml#getPages
+- name: get_page
+  description: Retrieve a single marketing page by id.
+  source_operation: openapi/bioflyte-content-openapi.yml#getPagesById
+- name: list_media
+  description: List the media library — product imagery, press assets and whitepaper PDFs. 374 items.
+  source_operation: openapi/bioflyte-content-openapi.yml#getMedia
+- name: get_media
+  description: Retrieve a single media item by id, including its source URL.
+  source_operation: openapi/bioflyte-content-openapi.yml#getMediaById
+- name: list_content_types
+  description: Enumerate the content types this API exposes and the taxonomies attached to each.
+  source_operation: openapi/bioflyte-content-openapi.yml#getTypes
+coverage:
+  tools: 12
+  all_read_only: true
+  write_tools: 0
+  note: >-
+    Deliberately read-only. Every write operation in the content API requires a WordPress
+    Application Password, and no agent should be handed one.

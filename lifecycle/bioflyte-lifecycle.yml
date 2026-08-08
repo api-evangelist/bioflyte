@@ -1,0 +1,97 @@
+generated: '2026-08-07'
+method: probed
+source: https://www.bioflyte.com/wp-json/ + https://portal.bioflyte.com/swagger/v1/swagger.json + live probes 2026-08-07
+versioning:
+  content_api:
+    scheme: uri-path-namespace
+    current: wp/v2
+    docs: null
+    note: >-
+      Version is carried by the WordPress REST namespace segment and tracks WordPress core.
+      BioFlyte does not version this API.
+  portal_api:
+    scheme: swagger-document-name
+    current: v1
+    docs: https://portal.bioflyte.com/swagger/index.html
+    note: >-
+      info.version is "1.0". The operation paths carry no version segment, so a caller cannot
+      pin a version. Only /swagger/v1/swagger.json exists; v2 and v1.0 both 404.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation or sunset policy is published for either API, and no operation in either
+    document is marked deprecated. No Deprecation pointer wired.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No SLA, uptime commitment or support tier is published. BioFlyte sells monitoring hardware
+    into critical infrastructure, so an availability commitment for the portal that surfaces its
+    alerts is the kind of thing customers would reasonably expect to see published — it is not.
+status_page:
+  url: null
+  probed:
+  - {url: 'https://status.bioflyte.com/', result: DNS does not resolve (NXDOMAIN)}
+  - {url: 'https://www.bioflyte.com/status/', result: 404}
+  - {url: 'https://bioflyte.statuspage.io/', result: '200 but redirects to https://www.atlassian.com/software/statuspage — the Statuspage marketing site, not a BioFlyte status page'}
+  note: >-
+    No status page exists. The bioflyte.statuspage.io hit is a false positive, verified by
+    following the redirect, and is recorded here so a later round does not re-report it. No
+    StatusPage pointer wired.
+changelog:
+  url: null
+  probed:
+  - {url: 'https://www.bioflyte.com/changelog/', result: 404}
+  - {url: 'https://www.bioflyte.com/category/press-release/', result: '200 — corporate newsroom (18 releases in the press-release category), not an API changelog'}
+  - {url: 'https://www.bioflyte.com/resources/', result: '200 — Resources library, 4 blog posts and 2 whitepapers, not an API changelog'}
+  note: >-
+    BioFlyte publishes no changelog or release notes for any API, and none for its instrument
+    firmware or threat library either — even though the products page states that "threat
+    library and software updates are easily executed through the cloud". The newsroom and
+    Resources library are wired as Press / Blog, not ChangeLog. No ChangeLog pointer wired.
+support:
+  contact_page: null
+  contact_email: info@bioflyte.com
+  developer_support: null
+  in_product: 'POST /RequestHelpSubmit — a help-request operation inside the authenticated portal API'
+  note: >-
+    The marketing site has no /contact/ page; contact happens through modal forms (WPForms) and
+    the info@bioflyte.com address in the site footer. There is no developer support channel,
+    forum, community, Slack/Discord or issue tracker for either API. No Support pointer wired —
+    a modal form on a marketing page is not a support channel a client can be pointed at.
+developer_surface_probes:
+  note: >-
+    Probed 2026-08-07 for any developer-facing surface. BioFlyte publishes none: no developer
+    portal, no documentation site, no API reference, no quickstart, no pricing page and no API
+    sign-up. api.bioflyte.com, docs.bioflyte.com, developer.bioflyte.com and dev.bioflyte.com
+    all NXDOMAIN. /api, /api-docs, /docs, /developers and /openapi.json on the marketing host
+    all 404. No pointer was wired for any of these — the pages do not exist.
+  swagger_ui:
+    url: https://portal.bioflyte.com/swagger/index.html
+    status: 200
+    finding: >-
+      The only API reference BioFlyte serves anywhere. It is Swagger UI on the customer portal,
+      reachable without credentials, describing an API whose every operation requires them. It
+      is not linked from the marketing site, not announced, and carries no version notes,
+      changelog or contact. Wired as SwaggerUI on the bioflyte:portal entry rather than as
+      APIReference or Documentation — it is generated scaffolding, not documentation BioFlyte
+      wrote or maintains.
+  postman:
+    wired: false
+    finding: No public Postman workspace, collection or team was found for BioFlyte.
+hosting:
+  content_host:
+    cdn: Cloudflare
+    origin: WP Engine
+    platform: WordPress (Divi theme, Yoast SEO, WPForms, Custom Post Type UI, Google Site Kit, Divi Flash — all present in the REST route index)
+    tls: TLSv1.3
+    cert_expires: 'Oct  1 07:18:15 2026 GMT'
+  portal_host:
+    origin: Kestrel (ASP.NET Core)
+    ip_allocation: Microsoft Azure
+    tls: TLSv1.3
+    cert_issuer: Let's Encrypt
+    cert_expires: 'Oct  8 01:51:34 2026 GMT'
+deprecated_operations: []

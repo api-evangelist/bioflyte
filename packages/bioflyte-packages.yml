@@ -1,0 +1,44 @@
+generated: '2026-08-07'
+method: searched
+source: >-
+  Public package-registry searches and a scan of every page on www.bioflyte.com and
+  portal.bioflyte.com, 2026-08-07
+sdk_count: 0
+api_clients: 0
+packages: []
+note: >-
+  BioFlyte ships no SDK, no API client library and no first-party package of any kind. It
+  publishes no developer program to wrap: the BioTOF z200 and MailScreen z200 are operated from
+  a local Windows tablet Command Console, and the customer portal API at portal.bioflyte.com is
+  the private backend of BioFlyte's own web console, undocumented and unannounced. No `SDKs`
+  pointer is wired in apis.yml — there is no client library to point at, and fabricating one to
+  satisfy the sdk_count check would be false.
+registries_probed:
+- {registry: npm, query: 'bioflyte / biotof', result: 0 hits}
+- {registry: pypi, query: 'bioflyte / bioflyte-sdk / biotof', result: '404 on the JSON API for each'}
+- {registry: rubygems, query: bioflyte, result: 404}
+- {registry: packagist, query: bioflyte/bioflyte, result: 404}
+- {registry: nuget, query: bioflyte, result: 0 hits}
+- {registry: crates.io, query: bioflyte, result: 0 crates}
+- {registry: maven-central, query: bioflyte, result: 0 artifacts}
+- {registry: pkg.go.dev, query: github.com/bioflyte, result: no module}
+pypi_soft_404_warning: >-
+  https://pypi.org/project/bioflyte/ returns HTTP 200 for names that do not exist — so does
+  https://pypi.org/project/bioflyte-sdk/. The authoritative check is the JSON API
+  (https://pypi.org/pypi/<name>/json), which returned 404 for every candidate. Recorded so a
+  later round does not read the 200 as a hit.
+source_code:
+  github_org:
+    url: https://github.com/bioflyte
+    exists: true
+    created: '2021-10-21'
+    public_repos: 0
+    name: null
+    description: null
+    note: >-
+      A GitHub organization with the handle `bioflyte` exists and returns 200, but it carries no
+      display name, no description, no website and zero public repositories. It cannot be
+      attributed to BioFlyte, Inc. on that evidence, so no GitHubOrganization pointer was wired.
+  other: >-
+    No source repository, sample code, Postman collection or code snippet was found on either
+    BioFlyte host.

@@ -1,0 +1,136 @@
+generated: '2026-08-07'
+method: derived
+source: mcp/bioflyte-mcp.yml + openapi/bioflyte-content-openapi.yml + openapi/bioflyte-portal-openapi-original.json
+status: candidate
+note: >-
+  BioFlyte publishes no MCP server, so there is no live tool list to bind. This crosswalk maps
+  the CANDIDATE tool set in mcp/bioflyte-mcp.yml to the real operationIds that back it, and —
+  more usefully — records which parts of BioFlyte's API estate an agent could never reach. Every
+  `rest` value below is an operationId that exists verbatim in the referenced document.
+surfaces:
+  openapi:
+  - file: openapi/bioflyte-content-openapi.yml
+    api: bioflyte:content
+    operations: 107
+    gated: false
+    note: Derived from https://www.bioflyte.com/wp-json/. Reads are anonymous.
+  - file: openapi/bioflyte-portal-openapi-original.json
+    api: bioflyte:portal
+    operations: 40
+    gated: true
+    note: >-
+      Published verbatim by BioFlyte at https://portal.bioflyte.com/swagger/v1/swagger.json.
+      Every operation returns 302 to /identity/account/login anonymously.
+  graphql: null
+  mcp:
+    url: null
+    gated: null
+    note: No MCP server exists. tools/list probed on four candidate URLs — see mcp/bioflyte-mcp.yml.
+crosswalk:
+- tool: search_bioflyte
+  category: discovery
+  rest: [getSearch]
+  binding: rest
+  confidence: high
+- tool: list_press_releases
+  category: news
+  rest: [getPosts]
+  binding: rest
+  confidence: high
+- tool: get_press_release
+  category: news
+  rest: [getPostsById]
+  binding: rest
+  confidence: high
+- tool: list_resources
+  category: resources
+  rest: [getResource]
+  binding: rest
+  confidence: high
+- tool: get_resource
+  category: resources
+  rest: [getResourceById]
+  binding: rest
+  confidence: high
+- tool: list_resource_categories
+  category: taxonomy
+  rest: [getResourcesCategory]
+  binding: rest
+  confidence: high
+- tool: list_news_categories
+  category: taxonomy
+  rest: [getCategories]
+  binding: rest
+  confidence: high
+- tool: list_pages
+  category: content
+  rest: [getPages]
+  binding: rest
+  confidence: high
+- tool: get_page
+  category: content
+  rest: [getPagesById]
+  binding: rest
+  confidence: high
+- tool: list_media
+  category: media
+  rest: [getMedia]
+  binding: rest
+  confidence: high
+- tool: get_media
+  category: media
+  rest: [getMediaById]
+  binding: rest
+  confidence: high
+- tool: list_content_types
+  category: discovery
+  rest: [getTypes]
+  binding: rest
+  confidence: high
+mcp_only: []
+rest_only:
+- capability: Device fleet, alerting and telemetry (the whole product surface)
+  api: bioflyte:portal
+  operations: 40
+  reason: >-
+    Authentication-gated behind an ASP.NET Core Identity cookie session with no documented token
+    path, and write-shaped RPC against safety-monitoring hardware. No tool was derived for any
+    of it. This is where BioFlyte's real capability lives and it is entirely unreachable by an
+    agent.
+  examples: [LoadAlertSetting, LoadRecipients, LoadDevicesSelectList, LoadLocationMapData,
+    LoadLocationsByOrgId, GetPermissions, SwitchOrganization, UploadFile, DownloadFile,
+    RequestHelpSubmit]
+- capability: Content write operations
+  api: bioflyte:content
+  operations: 72
+  reason: >-
+    POST/PUT/PATCH/DELETE across posts, pages, media, resources, comments and every taxonomy.
+    Require a WordPress Application Password. Deliberately excluded from the candidate tool set.
+- capability: Privileged content reads
+  api: bioflyte:content
+  operations: 2
+  reason: Return 401 rest_forbidden anonymously.
+  examples: [getSettings, getUsersMe]
+- capability: Site plumbing reads with nothing behind them
+  api: bioflyte:content
+  operations: 21
+  reason: >-
+    Real read operations with no useful agent-facing capability behind them — comments (0
+    records), projects (0), and the project_category, project_tag, difl_page_category and tags
+    taxonomies (0, 0, 0 and 1 term). Also the discovery and user routes, which a tool set does
+    not need beyond list_content_types.
+  examples: [getComments, getProject, getProjectCategory, getProjectTag, getDiflPageCategory,
+    getTags, getUsers, getStatuses, getTaxonomies]
+coverage:
+  tools_named: 12
+  tools_bound: 12
+  mcp_only: 0
+  rest_ops_total: 147
+  rest_ops_with_a_tool: 12
+  content_api: {total: 107, get: 35, write: 72, anonymous_200_reads: 33, gated_reads: 2}
+  portal_api: {total: 40, get: 3, write: 37, anonymous_200_reads: 0, gated: 40}
+  note: >-
+    33 of 147 published operations answer an anonymous caller, and all 33 are marketing content.
+    12 of them are worth a tool. Every one of the 40 operations that manages biothreat sensors
+    sits behind a cookie session with no documented token or scope model, so the product surface
+    is entirely unreachable by an agent.

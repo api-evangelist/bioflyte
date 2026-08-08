@@ -1,0 +1,110 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the BioFlyte Content API
+  version: 1.0.0
+extends: openapi/bioflyte-content-openapi.yml
+x-generated: '2026-08-07'
+x-method: generated
+x-source: >-
+  API Evangelist enrichment pipeline. Captures our annotations on top of the DERIVED OpenAPI so
+  the derived document stays a faithful projection of https://www.bioflyte.com/wp-json/ and our
+  editorial layer stays separable from it.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-profile: https://apis.io/providers/bioflyte/
+    x-apievangelist-artifacts:
+      authentication: authentication/bioflyte-authentication.yml
+      conventions: conventions/bioflyte-conventions.yml
+      errors: errors/bioflyte-problem-types.yml
+      data_model: data-model/bioflyte-data-model.yml
+      lifecycle: lifecycle/bioflyte-lifecycle.yml
+      conformance: conformance/bioflyte-conformance.yml
+      examples: examples/bioflyte-examples.yml
+      well_known: well-known/bioflyte-well-known.yml
+      skills: skills/_index.yml
+      agentic_access: agentic-access/bioflyte-agentic-access.yml
+    x-provider-published: false
+    x-derivation-note: >-
+      BioFlyte publishes no OpenAPI for this surface, no developer portal and no API
+      documentation. This document was derived mechanically from the site's live WordPress REST
+      route-discovery document and describes the CMS content API, not a BioFlyte product API.
+      The product-adjacent API lives at portal.bioflyte.com and is described by
+      openapi/bioflyte-portal-openapi-original.json.
+- target: $.info
+  update:
+    x-rate-limit-note: >-
+      No rate-limit headers are advertised. The origin sits behind Cloudflare in front of WP
+      Engine; edge limits may apply without being signalled. robots.txt sets Crawl-delay: 10.
+    x-caching-note: >-
+      Collection responses carry cache-control: max-age=2419200 (28 days), must-revalidate, with
+      x-cacheable YES and WP Engine cache HITs — long enough that a freshly published release
+      can be served stale.
+- target: $.servers[0]
+  update:
+    x-observed-tls: TLSv1.3
+    x-observed-cdn: Cloudflare
+    x-observed-origin: WP Engine
+- target: $.paths['/wp/v2/posts'].get
+  update:
+    description: >-
+      BioFlyte press releases and news. 36 published at harvest (2026-08-07) — funding rounds,
+      the DHS SAFETY Act Qualified Anti-Terrorism Technology designation, the U.S. Air Force
+      SBIR Phase I and Phase II awards, the Los Alamos National Laboratory collaboration, the
+      Pittsburgh International Airport surveillance pilot and the SoBran mail-screening
+      deployment. Filter with the `categories` parameter — term 16 is Press Release (18), term
+      15 is News (18).
+    x-record-count-observed: 36
+- target: $.paths['/wp/v2/resource'].get
+  update:
+    description: >-
+      The Resources library — BioFlyte's long-form content, split by the `resources-category`
+      taxonomy into Blog (term 30, 4 posts) and Whitepapers (term 31, 2 papers, including
+      "Impact of an Anthrax Attack on a US Airport and How it can be Mitigated"). This is the
+      most substantive non-press dataset on the API. Public permalinks follow
+      /resource/{term-slug}/{slug}/.
+    x-record-count-observed: 6
+- target: $.paths['/wp/v2/pages'].get
+  update:
+    description: >-
+      The nine marketing pages: home, products, technology, market-segments, resources, team,
+      careers, terms and privacy-policy. There is no developer, docs, pricing, status or
+      security page — the absence is the finding.
+    x-record-count-observed: 9
+- target: $.paths['/wp/v2/media'].get
+  update:
+    x-record-count-observed: 374
+    x-note: >-
+      Product imagery for the BioTOF z200 and MailScreen z200, press assets, and the whitepaper
+      PDFs referenced by the Resources library.
+- target: $.paths['/wp/v2/search'].get
+  update:
+    x-record-count-observed: 51
+    x-note: >-
+      The single most useful operation for an agent: one call spans posts, pages and resources,
+      and each hit carries _links.self pointing at the concrete collection route.
+- target: $.paths['/wp/v2/project'].get
+  update:
+    x-record-count-observed: 0
+    x-note: >-
+      Registered custom post type with no published records; both of its taxonomies
+      (project_category, project_tag) are empty too.
+- target: $.paths['/wp/v2/comments'].get
+  update:
+    x-record-count-observed: 0
+    x-note: Commenting is unused site-wide; this collection is permanently empty.
+- target: $.paths['/wp/v2/tags'].get
+  update:
+    x-record-count-observed: 1
+    x-note: A single term, "Featured" (3 records). Classification is carried by categories and resources-category.
+- target: $.paths['/wp/v2/settings'].get
+  update:
+    x-observed-anonymous-status: 401
+    x-note: 'Returns {"code":"rest_forbidden",...} anonymously, as do /themes, /plugins and /menus.'
+- target: $.components.securitySchemes.applicationPassword
+  update:
+    x-anonymous-read: true
+    x-note: >-
+      Every read operation in this document was verified to return 200 anonymously except
+      settings, themes, plugins and menus, which return 401. Only write operations require the
+      Application Password.

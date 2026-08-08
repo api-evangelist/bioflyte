@@ -1,0 +1,204 @@
+generated: '2026-08-07'
+method: derived
+source: >-
+  openapi/bioflyte-content-openapi.yml (from https://www.bioflyte.com/wp-json/) and
+  openapi/bioflyte-portal-openapi-original.json, plus live record counts observed 2026-08-07
+models:
+- api: bioflyte:content
+  note: >-
+    The WordPress content graph as BioFlyte has configured it. Two custom post types were
+    registered through Custom Post Type UI — `project` (Projects) and `resource` (Resources) —
+    alongside core post/page/attachment. `project` is registered but empty: 0 records, and both
+    of its taxonomies are empty too.
+  entities:
+  - name: post
+    rest_base: posts
+    label: Posts
+    role: Press releases and news items
+    records_observed: 36
+    id_type: integer
+    key_fields: [id, date, modified, slug, status, type, link, title.rendered, excerpt.rendered,
+      content.rendered, author, featured_media, categories, tags, meta]
+    relationships:
+    - {type: belongs_to, target: user, via: author}
+    - {type: has_many, target: category, via: categories}
+    - {type: has_many, target: post_tag, via: tags}
+    - {type: has_one, target: attachment, via: featured_media}
+  - name: resource
+    rest_base: resource
+    label: Resources
+    role: Blog posts and downloadable whitepapers
+    records_observed: 6
+    id_type: integer
+    permalink_pattern: /resource/{resources-category}/{slug}/
+    relationships:
+    - {type: has_many, target: resources-category, via: resources-category}
+    - {type: has_many, target: post_tag, via: tags}
+    - {type: has_one, target: attachment, via: featured_media}
+    - {type: belongs_to, target: user, via: author}
+  - name: page
+    rest_base: pages
+    label: Pages
+    role: Marketing pages (home, products, technology, market-segments, resources, team, careers, terms, privacy-policy)
+    records_observed: 9
+    relationships:
+    - {type: belongs_to, target: page, via: parent}
+    - {type: has_many, target: difl_page_category, via: difl_page_category}
+  - name: attachment
+    rest_base: media
+    label: Media
+    role: Media library — product imagery, whitepaper PDFs, press assets
+    records_observed: 374
+    relationships:
+    - {type: belongs_to, target: post, via: post}
+  - name: project
+    rest_base: project
+    label: Projects
+    records_observed: 0
+    note: Registered custom post type with no published records.
+    relationships:
+    - {type: has_many, target: project_category, via: project_category}
+    - {type: has_many, target: project_tag, via: project_tag}
+  - name: user
+    rest_base: users
+    label: Users
+    records_observed: 4
+    note: Content authors, exposed anonymously in view context (id, name, slug, avatar).
+  - name: comment
+    rest_base: comments
+    records_observed: 0
+    note: Commenting is unused site-wide; this collection is permanently empty.
+    relationships:
+    - {type: belongs_to, target: post, via: post}
+    - {type: belongs_to, target: comment, via: parent}
+  taxonomies:
+  - {name: category, rest_base: categories, applies_to: [post], terms_observed: 3, terms: [News (18), Press Release (18), Uncategorized (0)]}
+  - {name: post_tag, rest_base: tags, applies_to: [post, resource], terms_observed: 1, terms: [Featured (3)]}
+  - {name: resources-category, rest_base: resources-category, applies_to: [resource], terms_observed: 2, terms: [Blog (4), Whitepapers (2)]}
+  - {name: project_category, rest_base: project_category, applies_to: [project], terms_observed: 0}
+  - {name: project_tag, rest_base: project_tag, applies_to: [project], terms_observed: 0}
+  - {name: difl_page_category, rest_base: difl_page_category, applies_to: [page], terms_observed: 0}
+- api: bioflyte:portal
+  note: >-
+    The AdminWeb document declares only 8 schemas, all of them thin request/response wrappers,
+    so the domain graph below is inferred from those schemas plus the operation names and
+    Swagger tags. Field lists are complete for declared schemas and ABSENT for entities that are
+    only named (Device, Organization, Location, Alert, Sample, Role, Telemetry Type) — those
+    entities have no schema in the published document at all. Nothing here is invented: every
+    entity name and every relationship is taken from a declared property name or an operation
+    name in the provider's own OpenAPI.
+  entities:
+  - name: Device
+    id_type: uuid
+    evidence: >-
+      deviceId (uuid) on NewSampleReceived, AlertsUpdated and LoadLocationMapForDeviceRequest;
+      operations LoadDevicesSelectList, LoadDeviceAzureSelectList,
+      LoadDeviceAzureNotBindedSelectList, LoadDevicesSelectListArchiveDependent,
+      LoadDevicesSelectListNotInLocation, LoadDevicesSelectListNotInOrganization,
+      LoadDeviceStatusList
+    schema_published: false
+    relationships:
+    - {type: belongs_to, target: Organization, via: 'LoadDevicesSelectListNotInOrganization implies device→organization binding'}
+    - {type: belongs_to, target: Location, via: 'LoadDevicesSelectListNotInLocation implies device→location binding'}
+    - {type: has_many, target: Sample, via: 'NewSampleReceived.deviceId'}
+    - {type: has_many, target: Alert, via: 'AlertsUpdated.deviceId'}
+    note: >-
+      "DeviceAzure" and "NotBinded" in the operation names indicate devices are registered as
+      Azure IoT identities and bound to a portal device record.
+  - name: Sample
+    id_type: uuid
+    evidence: NewSampleReceived.sampleId; operations TestOnSampleReceived, Test/TestOnSampleStatusUpdated
+    schema_published: false
+    relationships:
+    - {type: belongs_to, target: Device, via: deviceId}
+  - name: Alert
+    id_type: uuid
+    evidence: >-
+      AlertsUpdated.alertId[]; operations LoadRecipients, LoadAlertSetting,
+      LoadAlertSettingDetails, LoadAlertTypeInfo, LoadAlertTypeSelectList,
+      LoadAlertSettingsSelectList, LoadAlertTypeFilteredSelectList, LoadAlertStatusSelectList
+    schema_published: false
+    relationships:
+    - {type: belongs_to, target: Device, via: deviceId}
+    - {type: belongs_to, target: AlertSetting, via: 'LoadAlertSettingDetails / LoadAlertSettingsSelectList'}
+    - {type: has_many, target: Recipient, via: LoadRecipients}
+  - name: AlertSetting
+    evidence: LoadAlertSetting, LoadAlertSettingDetails, LoadAlertSettingsSelectList, LoadSettingLayerTypesSelectList
+    schema_published: false
+    note: '"Setting layer types" implies alert settings are layered (e.g. global → organization → location → device).'
+  - name: Organization
+    id_type: uuid
+    evidence: >-
+      PermissionsReq.organizationTypeId; operations LoadOrganizationSelectList,
+      LoadOrganizationTypeSelectList, LoadOrganizationStatusSelectList, LoadLocationsByOrgId,
+      SwitchOrganization
+    schema_published: false
+    relationships:
+    - {type: has_many, target: Location, via: LoadLocationsByOrgId}
+    - {type: has_many, target: Device, via: LoadDevicesSelectListNotInOrganization}
+    note: SwitchOrganization confirms a user can hold membership in more than one organization — this is multi-tenant.
+  - name: Location
+    id_type: uuid
+    evidence: LoadLocationMapForDeviceRequest.locationId; operations LoadLocationMapData, LoadLocationsByOrgId
+    schema_published: false
+    relationships:
+    - {type: belongs_to, target: Organization, via: LoadLocationsByOrgId}
+    - {type: has_many, target: Device, via: LoadDevicesSelectListNotInLocation}
+    - {type: has_one, target: File, via: 'LoadLocationMapForDeviceRequest.dbFileId — the floor-plan/map file'}
+  - name: User
+    evidence: operations LoadUsersSelectList, LoadRolesForUser, GetPermissionsForUser, PermissionsReqForUser
+    schema_published: false
+    relationships:
+    - {type: has_many, target: Role, via: LoadRolesForUser}
+    - {type: belongs_to, target: Organization, via: SwitchOrganization}
+  - name: Role
+    id_type: uuid
+    evidence: PermissionsReq.selectedRoles[]; operations LoadRolesSelectList, LoadRolesForUser
+    schema_published: false
+    relationships:
+    - {type: has_many, target: Permission, via: 'PermissionsReq.grantedPermissions[] / deniedPermissions[]'}
+  - name: Permission
+    id_type: integer
+    evidence: PermissionsReq.grantedPermissions[] and deniedPermissions[] (int32); operations GetPermissions, GetPermissionsForUser
+    schema_published: false
+    note: >-
+      Permissions are integer-coded and carry an explicit grant/deny split, so the model
+      supports negative permissions, not just additive grants.
+  - name: File
+    id_type: uuid
+    evidence: LoadLocationMapForDeviceRequest.dbFileId; operations UploadFile, DownloadFile (query param id, uuid), DeleteFile
+    schema_published: false
+  - name: TelemetryType
+    evidence: LoadTelemetryTypesSelectList
+    schema_published: false
+  - name: ProductType
+    evidence: LoadProductTypeSelectList
+    schema_published: false
+  - name: ConfigChangeType
+    evidence: LoadConfigChangeTypeSelectList
+    schema_published: false
+    note: Implies a device-configuration change log exists behind the portal.
+  - name: ColorCodingStatus
+    evidence: LoadColorCodingStatusList
+    schema_published: false
+    note: The severity/status colour scheme surfaced on the portal's device and alert views.
+  declared_schemas:
+  - {name: ObjId, shape: '{id: uuid}', role: generic single-id request wrapper}
+  - {name: ObjIdNullable, shape: '{id: uuid|null}', role: generic optional-id request wrapper}
+  - {name: PermissionsReq, shape: '{organizationTypeId: uuid?, selectedRoles: uuid[]?, grantedPermissions: int[]?, deniedPermissions: int[]?}'}
+  - {name: PermissionsReqForUser, role: per-user variant of PermissionsReq}
+  - {name: RolesForUserReq, role: role lookup for a user}
+  - {name: LoadLocationMapForDeviceRequest, shape: '{dbFileId: uuid, locationId: uuid, deviceId: uuid}'}
+  - {name: NewSampleReceived, shape: '{deviceId: uuid, sampleId: uuid}'}
+  - {name: AlertsUpdated, shape: '{deviceId: uuid, timestamp: date-time, alertId: uuid[]?}'}
+gaps:
+- api: bioflyte:portal
+  finding: >-
+    Of roughly fourteen entities the operation surface implies, only two carry a published
+    payload schema (NewSampleReceived, AlertsUpdated) and none of the core domain objects —
+    Device, Organization, Location, Alert, Sample, User, Role — is defined anywhere in the
+    document. Thirty-eight of the forty operations declare a 200 "OK" with no response schema,
+    so a client cannot know the shape of anything it gets back.
+  remedy: >-
+    Add response schemas to the Swashbuckle annotations. The types already exist in the C#
+    controllers; they are simply not being emitted into the document.
