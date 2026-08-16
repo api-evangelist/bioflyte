@@ -1,0 +1,21 @@
+{
+  "repo": "bioflyte",
+  "feeds": [
+    {
+      "source": "https://www.bioflyte.com/market-segments/",
+      "feed_url": "https://www.bioflyte.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.bioflyte.com/resources/",
+      "feed_url": "https://www.bioflyte.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-15T12:22:01Z"
+}
