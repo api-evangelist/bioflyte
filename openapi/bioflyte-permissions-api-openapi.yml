@@ -1,0 +1,183 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Permissions API
+  version: '1.0'
+tags:
+- name: Permissions
+paths:
+  /GetPermissions:
+    post:
+      tags:
+      - Permissions
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReq'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReq'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReq'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReq'
+      responses:
+        '200':
+          description: OK
+  /LoadRolesForUser:
+    post:
+      tags:
+      - Permissions
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RolesForUserReq'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RolesForUserReq'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RolesForUserReq'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RolesForUserReq'
+      responses:
+        '200':
+          description: OK
+  /SwitchOrganization:
+    post:
+      tags:
+      - Permissions
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjIdNullable'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjIdNullable'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjIdNullable'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjIdNullable'
+      responses:
+        '200':
+          description: OK
+  /GetPermissionsForUser:
+    post:
+      tags:
+      - Permissions
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReqForUser'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReqForUser'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReqForUser'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PermissionsReqForUser'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    PermissionsReqForUser:
+      type: object
+      properties:
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        selectedRoles:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        selectedOrgIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        grantedPermissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        deniedPermissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    RolesForUserReq:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        selectedOrgIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    PermissionsReq:
+      type: object
+      properties:
+        organizationTypeId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        selectedRoles:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        grantedPermissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        deniedPermissions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    ObjIdNullable:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false

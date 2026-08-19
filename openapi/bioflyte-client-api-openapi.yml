@@ -1,0 +1,14 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Client API
+  version: '1.0'
+tags:
+- name: Client
+paths:
+  /GetClientCountryCodeByIp:
+    get:
+      tags:
+      - Client
+      responses:
+        '200':
+          description: OK

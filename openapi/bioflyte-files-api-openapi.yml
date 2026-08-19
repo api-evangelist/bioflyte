@@ -1,0 +1,75 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Files API
+  version: '1.0'
+tags:
+- name: Files
+paths:
+  /UploadFile:
+    post:
+      tags:
+      - Files
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: OK
+  /DownloadFile:
+    get:
+      tags:
+      - Files
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /DeleteFile:
+    post:
+      tags:
+      - Files
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ObjId:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+      additionalProperties: false

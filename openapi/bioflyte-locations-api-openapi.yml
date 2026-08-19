@@ -1,0 +1,43 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Locations API
+  version: '1.0'
+tags:
+- name: Locations
+paths:
+  /LoadLocationMapData:
+    post:
+      tags:
+      - Locations
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LoadLocationMapForDeviceRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoadLocationMapForDeviceRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoadLocationMapForDeviceRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoadLocationMapForDeviceRequest'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    LoadLocationMapForDeviceRequest:
+      type: object
+      properties:
+        dbFileId:
+          type: string
+          format: uuid
+        locationId:
+          type: string
+          format: uuid
+        deviceId:
+          type: string
+          format: uuid
+      additionalProperties: false

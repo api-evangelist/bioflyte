@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AdminWeb Request Help API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RequestHelp",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /RequestHelpSubmit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/RequestHelpSubmit",
+            "params": [
+              {
+                "name": "Subject",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Comment",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NewFileIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,344 @@
+{
+  "item": [
+    {
+      "id": "b9af0ec9-54e5-4623-96e6-5aa909f28745",
+      "name": "Permissions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "294d253a-9b1d-477f-a781-5996fca9079c",
+          "name": "/GetPermissions",
+          "request": {
+            "name": "/GetPermissions",
+            "description": {},
+            "url": {
+              "path": [
+                "GetPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationTypeId\": \"<string,null-uuid>\",\n  \"selectedRoles\": \"<array,null>\",\n  \"grantedPermissions\": \"<array,null>\",\n  \"deniedPermissions\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66e6c7de-a632-411d-a836-fe7e6007b301",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GetPermissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationTypeId\": \"<string,null-uuid>\",\n  \"selectedRoles\": \"<array,null>\",\n  \"grantedPermissions\": \"<array,null>\",\n  \"deniedPermissions\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e0ada4e-b0e0-49d1-afcd-42cd9761ff0f",
+          "name": "/LoadRolesForUser",
+          "request": {
+            "name": "/LoadRolesForUser",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadRolesForUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string,null-uuid>\",\n  \"selectedOrgIds\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f63bf88-d91d-491e-a29f-1ff4a4367bc0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadRolesForUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string,null-uuid>\",\n  \"selectedOrgIds\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffbc233b-4a2d-4e2c-89c9-d29b884c7284",
+          "name": "/SwitchOrganization",
+          "request": {
+            "name": "/SwitchOrganization",
+            "description": {},
+            "url": {
+              "path": [
+                "SwitchOrganization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string,null-uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fbb46cec-7c24-46cb-afac-894fe5a3a933",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SwitchOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string,null-uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "214a954c-ec3f-4293-ad27-7d465bd303b5",
+          "name": "/GetPermissionsForUser",
+          "request": {
+            "name": "/GetPermissionsForUser",
+            "description": {},
+            "url": {
+              "path": [
+                "GetPermissionsForUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"<string,null-uuid>\",\n  \"selectedRoles\": \"<array,null>\",\n  \"selectedOrgIds\": \"<array,null>\",\n  \"grantedPermissions\": \"<array,null>\",\n  \"deniedPermissions\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8b21b423-5304-4957-ba18-6431c26591db",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GetPermissionsForUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"<string,null-uuid>\",\n  \"selectedRoles\": \"<array,null>\",\n  \"selectedOrgIds\": \"<array,null>\",\n  \"grantedPermissions\": \"<array,null>\",\n  \"deniedPermissions\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "05f11097-a2a1-40fc-a62f-a94402e0d82e",
+    "name": "AdminWeb Permissions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

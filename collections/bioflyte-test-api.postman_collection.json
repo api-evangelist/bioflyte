@@ -1,0 +1,274 @@
+{
+  "item": [
+    {
+      "id": "4bf5c475-ab72-4c5a-9bc0-946a21458be9",
+      "name": "Test",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a9e2389-6a4b-415b-abb7-78e11e3ea003",
+          "name": "/TestOnSampleReceived",
+          "request": {
+            "name": "/TestOnSampleReceived",
+            "description": {},
+            "url": {
+              "path": [
+                "TestOnSampleReceived"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceId\": \"<uuid>\",\n  \"sampleId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2ca9c3e-b9f4-4b0c-9c97-4e68d3b8f019",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TestOnSampleReceived"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deviceId\": \"<uuid>\",\n  \"sampleId\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d60952eb-3a3f-439a-853f-b247b5160a2a",
+          "name": "/TestOnAlertsUpdated",
+          "request": {
+            "name": "/TestOnAlertsUpdated",
+            "description": {},
+            "url": {
+              "path": [
+                "TestOnAlertsUpdated"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceId\": \"<uuid>\",\n  \"timestamp\": \"<dateTime>\",\n  \"alertId\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "153ef381-d3c4-485a-b2de-89c312090994",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TestOnAlertsUpdated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deviceId\": \"<uuid>\",\n  \"timestamp\": \"<dateTime>\",\n  \"alertId\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3dca40a2-f4e8-474b-a7a1-39110be235bd",
+          "name": "/Test/TestOnSampleStatusUpdated",
+          "request": {
+            "name": "/Test/TestOnSampleStatusUpdated",
+            "description": {},
+            "url": {
+              "path": [
+                "Test",
+                "TestOnSampleStatusUpdated"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "deviceId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isStartEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IsDeviceBuzy",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2404d953-87ac-4f87-b2f8-188c08bb8ec9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Test",
+                    "TestOnSampleStatusUpdated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "deviceId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "isStartEnabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IsDeviceBuzy",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "48d16b14-8017-4510-aa60-375bc5b1c585",
+    "name": "AdminWeb Test API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

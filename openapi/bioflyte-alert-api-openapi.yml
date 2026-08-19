@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Alert API
+  version: '1.0'
+tags:
+- name: Alert
+paths:
+  /LoadRecipients:
+    post:
+      tags:
+      - Alert
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+      responses:
+        '200':
+          description: OK
+  /LoadAlertSetting:
+    post:
+      tags:
+      - Alert
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+      responses:
+        '200':
+          description: OK
+  /LoadAlertSettingDetails:
+    post:
+      tags:
+      - Alert
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+      responses:
+        '200':
+          description: OK
+  /LoadAlertTypeInfo:
+    post:
+      tags:
+      - Alert
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ObjId'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ObjId:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+      additionalProperties: false

@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "f3053c36-bd58-4870-901f-a6c3e2334fa3",
+      "name": "Locations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "16378e8c-d03c-41d9-867a-8df1cc3183bd",
+          "name": "/LoadLocationMapData",
+          "request": {
+            "name": "/LoadLocationMapData",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadLocationMapData"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dbFileId\": \"<uuid>\",\n  \"locationId\": \"<uuid>\",\n  \"deviceId\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "48968565-28a0-48cb-a7f8-aad901e86430",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadLocationMapData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dbFileId\": \"<uuid>\",\n  \"locationId\": \"<uuid>\",\n  \"deviceId\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2b9f897b-301c-434a-bb88-de24faef53f8",
+    "name": "AdminWeb Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

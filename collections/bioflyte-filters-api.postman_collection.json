@@ -1,0 +1,1754 @@
+{
+  "item": [
+    {
+      "id": "0fcb1c6c-9ddd-47bb-84ce-ab4425241bee",
+      "name": "Filters",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b448b5e-fcf5-4324-9fd0-861a3711f636",
+          "name": "/LoadIsActiveSelectList",
+          "request": {
+            "name": "/LoadIsActiveSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadIsActiveSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c140cacc-7434-4282-b360-3aea3754073e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadIsActiveSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffeee4e2-419e-482f-a63a-89ffd27e0531",
+          "name": "/LoadRolesSelectList",
+          "request": {
+            "name": "/LoadRolesSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadRolesSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5ae8b14-dc8e-477e-9764-aad74f932de0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadRolesSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20f33392-5782-4d71-a01f-66de0a4d9898",
+          "name": "/LoadDeviceAzureSelectList",
+          "request": {
+            "name": "/LoadDeviceAzureSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDeviceAzureSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fede38a-60bf-4d7f-805e-d3888047374a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDeviceAzureSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38378e91-4141-4485-a06b-98b790a05dc4",
+          "name": "/LoadDeviceAzureNotBindedSelectList",
+          "request": {
+            "name": "/LoadDeviceAzureNotBindedSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDeviceAzureNotBindedSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d37591d4-4c34-429d-8997-6363cd5bec3f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDeviceAzureNotBindedSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29b48ddd-2835-40b5-9f34-2deaf543cbc3",
+          "name": "/LoadProductTypeSelectList",
+          "request": {
+            "name": "/LoadProductTypeSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadProductTypeSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1fbade95-56d0-4ef0-a90c-b4b238f2829d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadProductTypeSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce034b33-39ed-4cee-91ef-c40409c730f6",
+          "name": "/LoadOrganizationTypeSelectList",
+          "request": {
+            "name": "/LoadOrganizationTypeSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadOrganizationTypeSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9d13e65-8852-4f93-9cc8-17ad977458e8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadOrganizationTypeSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac229a53-49c2-4725-a40f-119a56718294",
+          "name": "/LoadOrganizationStatusSelectList",
+          "request": {
+            "name": "/LoadOrganizationStatusSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadOrganizationStatusSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a2fea0cc-6680-4911-82c4-53c1bdc48df1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadOrganizationStatusSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccd5e0e5-91d6-453c-b0b7-cbedcd55c84d",
+          "name": "/LoadOrganizationSelectList",
+          "request": {
+            "name": "/LoadOrganizationSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadOrganizationSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "IsAllOrgs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99ef0231-ee2d-4902-962a-311f84518d73",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadOrganizationSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "IsAllOrgs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "066f6213-39dc-49fc-bbc6-63d37776d8f3",
+          "name": "/LoadDeviceStatusList",
+          "request": {
+            "name": "/LoadDeviceStatusList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDeviceStatusList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56d216e1-faaf-434e-bf26-085daa84a2f8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDeviceStatusList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4444e945-6148-48af-a4c5-f0c30718c217",
+          "name": "/LoadColorCodingStatusList",
+          "request": {
+            "name": "/LoadColorCodingStatusList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadColorCodingStatusList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0053a327-69a8-462c-967e-530a91a24c8d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadColorCodingStatusList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1881c4f-215b-41a2-88f6-d7c306cf4a9b",
+          "name": "/LoadDevicesSelectList",
+          "request": {
+            "name": "/LoadDevicesSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDevicesSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SelectedOrganizationIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SelectedDeviceIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "817b2aa9-83d9-4997-8554-a8ab1733c14b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDevicesSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SelectedOrganizationIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SelectedDeviceIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "774b55eb-4ed8-4e0c-81ca-37d03e8ae68b",
+          "name": "/LoadDevicesSelectListArchiveDependent",
+          "request": {
+            "name": "/LoadDevicesSelectListArchiveDependent",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDevicesSelectListArchiveDependent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SelectedOrganizationIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SelectedDeviceIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c59170ee-8b77-4519-b0d8-98cb26cfbc69",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDevicesSelectListArchiveDependent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SelectedOrganizationIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SelectedDeviceIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4cbc1ccd-e416-443f-99d6-9f6519914abf",
+          "name": "/LoadDevicesSelectListNotInLocation",
+          "request": {
+            "name": "/LoadDevicesSelectListNotInLocation",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDevicesSelectListNotInLocation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SelectedOrganizationIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "SelectedDeviceIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15662b1c-a6ae-4d31-a408-6c6310f94605",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDevicesSelectListNotInLocation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SelectedOrganizationIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SelectedDeviceIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1af5e2f1-e938-4ca3-b085-9e702e5e1cad",
+          "name": "/LoadDevicesSelectListNotInOrganization",
+          "request": {
+            "name": "/LoadDevicesSelectListNotInOrganization",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadDevicesSelectListNotInOrganization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c66ebf2-fc9c-469b-853e-147423a44891",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadDevicesSelectListNotInOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2f686fc-8e93-42c3-a3c6-bfe83dbcf30a",
+          "name": "/LoadAlertTypeSelectList",
+          "request": {
+            "name": "/LoadAlertTypeSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadAlertTypeSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba8d207e-ffa7-459f-a502-db52fc73284d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadAlertTypeSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40f58837-9cda-4870-94fa-baaf9801cbb7",
+          "name": "/LoadAlertSettingsSelectList",
+          "request": {
+            "name": "/LoadAlertSettingsSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadAlertSettingsSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26a8a70e-b39c-4c44-b98a-2eb73003e365",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadAlertSettingsSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20ef6136-3d60-40f6-b145-bf26f9bd3301",
+          "name": "/LoadAlertTypeFilteredSelectList",
+          "request": {
+            "name": "/LoadAlertTypeFilteredSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadAlertTypeFilteredSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "465e8f31-9ba2-4160-aad3-d72ac062109d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadAlertTypeFilteredSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42d046ae-faea-4429-aaec-b9c4494802f9",
+          "name": "/LoadAlertStatusSelectList",
+          "request": {
+            "name": "/LoadAlertStatusSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadAlertStatusSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3573c474-f54d-4dc4-9a5f-6427120bd1ff",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadAlertStatusSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "892e1ac6-fff6-4700-8ff5-8a23e5333403",
+          "name": "/LoadUsersSelectList",
+          "request": {
+            "name": "/LoadUsersSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadUsersSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SelectedOrganizationIds",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6ff882f-0895-44b5-b0a8-e17146c58bfe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadUsersSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SelectedOrganizationIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93bba0f8-17ec-43d7-a0f9-903bfccceb4e",
+          "name": "/LoadTelemetryTypesSelectList",
+          "request": {
+            "name": "/LoadTelemetryTypesSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadTelemetryTypesSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38b3449c-7fea-4ea8-81e7-8448404151e2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadTelemetryTypesSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "195ccc71-7321-4f4a-8adc-f09ab23327af",
+          "name": "/LoadSettingLayerTypesSelectList",
+          "request": {
+            "name": "/LoadSettingLayerTypesSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadSettingLayerTypesSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a647fad-046f-4dbf-bb0e-48ff12881941",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadSettingLayerTypesSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "591b6e26-4595-4275-b05f-89de56605afc",
+          "name": "/LoadConfigChangeTypeSelectList",
+          "request": {
+            "name": "/LoadConfigChangeTypeSelectList",
+            "description": {},
+            "url": {
+              "path": [
+                "LoadConfigChangeTypeSelectList"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "Values",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b25e43bc-1ecc-4819-b480-55099d498032",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "LoadConfigChangeTypeSelectList"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "Values",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6b33769c-c3a0-496e-94f0-ad428b8b1f96",
+    "name": "AdminWeb Filters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AdminWeb Client API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Client",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /GetClientCountryCodeByIp",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/GetClientCountryCodeByIp"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

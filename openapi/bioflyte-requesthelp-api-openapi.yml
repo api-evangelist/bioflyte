@@ -1,0 +1,32 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Request Help API
+  version: '1.0'
+tags:
+- name: RequestHelp
+paths:
+  /RequestHelpSubmit:
+    post:
+      tags:
+      - RequestHelp
+      parameters:
+      - name: Subject
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: Comment
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: NewFileIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: OK

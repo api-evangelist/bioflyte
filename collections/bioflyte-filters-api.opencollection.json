@@ -1,0 +1,542 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AdminWeb Filters API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /LoadIsActiveSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadIsActiveSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadRolesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadRolesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceAzureSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceAzureSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceAzureNotBindedSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceAzureNotBindedSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadProductTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadProductTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationStatusSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationStatusSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationSelectList",
+            "params": [
+              {
+                "name": "IsAllOrgs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceStatusList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceStatusList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadColorCodingStatusList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadColorCodingStatusList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectList",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListArchiveDependent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListArchiveDependent",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListNotInLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListNotInLocation",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListNotInOrganization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListNotInOrganization",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertSettingsSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertSettingsSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertTypeFilteredSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertTypeFilteredSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertStatusSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertStatusSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadUsersSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadUsersSelectList",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadTelemetryTypesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadTelemetryTypesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadSettingLayerTypesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadSettingLayerTypesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadConfigChangeTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadConfigChangeTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

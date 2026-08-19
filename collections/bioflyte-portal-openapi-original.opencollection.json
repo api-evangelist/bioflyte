@@ -1,0 +1,896 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AdminWeb",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Alert",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /LoadRecipients",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadRecipients",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertSetting",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertSetting",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertSettingDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertSettingDetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertTypeInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertTypeInfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Client",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /GetClientCountryCodeByIp",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/GetClientCountryCodeByIp"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /UploadFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/UploadFile",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /DownloadFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/DownloadFile",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /DeleteFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/DeleteFile",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Filters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /LoadIsActiveSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadIsActiveSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadRolesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadRolesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceAzureSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceAzureSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceAzureNotBindedSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceAzureNotBindedSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadProductTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadProductTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationStatusSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationStatusSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadOrganizationSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadOrganizationSelectList",
+            "params": [
+              {
+                "name": "IsAllOrgs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDeviceStatusList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDeviceStatusList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadColorCodingStatusList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadColorCodingStatusList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectList",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListArchiveDependent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListArchiveDependent",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListNotInLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListNotInLocation",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SelectedDeviceIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadDevicesSelectListNotInOrganization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadDevicesSelectListNotInOrganization",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertSettingsSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertSettingsSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertTypeFilteredSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertTypeFilteredSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadAlertStatusSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadAlertStatusSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadUsersSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadUsersSelectList",
+            "params": [
+              {
+                "name": "SelectedOrganizationIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadTelemetryTypesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadTelemetryTypesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadSettingLayerTypesSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadSettingLayerTypesSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadConfigChangeTypeSelectList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadConfigChangeTypeSelectList",
+            "params": [
+              {
+                "name": "Search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Values",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /LoadLocationMapData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadLocationMapData",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /LoadLocationsByOrgId",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadLocationsByOrgId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Permissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /GetPermissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/GetPermissions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /LoadRolesForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/LoadRolesForUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /SwitchOrganization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/SwitchOrganization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /GetPermissionsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/GetPermissionsForUser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RequestHelp",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /RequestHelpSubmit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/RequestHelpSubmit",
+            "params": [
+              {
+                "name": "Subject",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Comment",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NewFileIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Test",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /TestOnSampleReceived",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/TestOnSampleReceived",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /TestOnAlertsUpdated",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/TestOnAlertsUpdated",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /Test/TestOnSampleStatusUpdated",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/Test/TestOnSampleStatusUpdated",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isStartEnabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsDeviceBuzy",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

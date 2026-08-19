@@ -1,0 +1,99 @@
+openapi: 3.2.0
+info:
+  title: AdminWeb Test API
+  version: '1.0'
+tags:
+- name: Test
+paths:
+  /TestOnSampleReceived:
+    post:
+      tags:
+      - Test
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/NewSampleReceived'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewSampleReceived'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/NewSampleReceived'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/NewSampleReceived'
+      responses:
+        '200':
+          description: OK
+  /TestOnAlertsUpdated:
+    post:
+      tags:
+      - Test
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AlertsUpdated'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlertsUpdated'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AlertsUpdated'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AlertsUpdated'
+      responses:
+        '200':
+          description: OK
+  /Test/TestOnSampleStatusUpdated:
+    get:
+      tags:
+      - Test
+      parameters:
+      - name: deviceId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: isStartEnabled
+        in: query
+        schema:
+          type: boolean
+      - name: IsDeviceBuzy
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    AlertsUpdated:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        timestamp:
+          type: string
+          format: date-time
+        alertId:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    NewSampleReceived:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        sampleId:
+          type: string
+          format: uuid
+      additionalProperties: false
