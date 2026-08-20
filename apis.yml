@@ -71,6 +71,8 @@ apis:
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
   tags:
+  - Clients
+  tags_raw:
   - Client
   properties:
   - type: OpenAPI
@@ -131,6 +133,8 @@ apis:
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -291,6 +295,8 @@ apis:
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -410,7 +416,8 @@ apis:
   description: The Test API from BioFlyte — 3 operation(s) for test.
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
-  tags:
+  tags: []
+  tags_raw:
   - Test
   properties:
   - type: OpenAPI
@@ -431,6 +438,8 @@ apis:
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
