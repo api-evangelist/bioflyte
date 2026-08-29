@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
-  title: AdminWeb Test API
+  title: Bioflyte Test API
   version: '1.0'
+  description: 'Operations tagged Test across 2 of this provider''s published API definitions: bioflyte-portal-openapi-original.json, bioflyte-test-api-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://portal.bioflyte.com
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Test
 paths:
@@ -70,6 +74,16 @@ paths:
           description: OK
 components:
   schemas:
+    NewSampleReceived:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        sampleId:
+          type: string
+          format: uuid
+      additionalProperties: false
     AlertsUpdated:
       type: object
       properties:
@@ -87,13 +101,6 @@ components:
             type: string
             format: uuid
       additionalProperties: false
-    NewSampleReceived:
-      type: object
-      properties:
-        deviceId:
-          type: string
-          format: uuid
-        sampleId:
-          type: string
-          format: uuid
-      additionalProperties: false
+x-refined-from:
+- bioflyte-portal-openapi-original.json
+- bioflyte-test-api-openapi.yml

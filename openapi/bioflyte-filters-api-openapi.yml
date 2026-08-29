@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
-  title: AdminWeb Filters API
+  title: Bioflyte Filters API
   version: '1.0'
+  description: 'Operations tagged Filters across 2 of this provider''s published API definitions: bioflyte-filters-api-openapi.yml, bioflyte-portal-openapi-original.json. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://portal.bioflyte.com
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Filters
 paths:
@@ -21,6 +25,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadRolesSelectList:
     post:
       tags:
@@ -37,6 +44,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDeviceAzureSelectList:
     post:
       tags:
@@ -53,6 +63,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDeviceAzureNotBindedSelectList:
     post:
       tags:
@@ -69,6 +82,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadProductTypeSelectList:
     post:
       tags:
@@ -85,6 +101,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadOrganizationTypeSelectList:
     post:
       tags:
@@ -101,6 +120,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadOrganizationStatusSelectList:
     post:
       tags:
@@ -117,6 +139,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadOrganizationSelectList:
     post:
       tags:
@@ -137,6 +162,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDeviceStatusList:
     post:
       tags:
@@ -153,6 +181,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadColorCodingStatusList:
     post:
       tags:
@@ -169,6 +200,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDevicesSelectList:
     post:
       tags:
@@ -193,6 +227,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDevicesSelectListArchiveDependent:
     post:
       tags:
@@ -217,6 +254,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDevicesSelectListNotInLocation:
     post:
       tags:
@@ -241,6 +281,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadDevicesSelectListNotInOrganization:
     post:
       tags:
@@ -257,6 +300,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadAlertTypeSelectList:
     post:
       tags:
@@ -273,6 +319,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadAlertSettingsSelectList:
     post:
       tags:
@@ -289,6 +338,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadAlertTypeFilteredSelectList:
     post:
       tags:
@@ -305,6 +357,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadAlertStatusSelectList:
     post:
       tags:
@@ -321,6 +376,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadUsersSelectList:
     post:
       tags:
@@ -341,6 +399,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadTelemetryTypesSelectList:
     post:
       tags:
@@ -357,6 +418,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadSettingLayerTypesSelectList:
     post:
       tags:
@@ -373,6 +437,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
   /LoadConfigChangeTypeSelectList:
     post:
       tags:
@@ -389,3 +456,9 @@ paths:
       responses:
         '200':
           description: OK
+    servers:
+    - url: https://portal.bioflyte.com
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
+x-refined-from:
+- bioflyte-filters-api-openapi.yml
+- bioflyte-portal-openapi-original.json

@@ -1,12 +1,7 @@
 openapi: 3.2.0
 info:
-  title: BioFlyte Content API (WordPress REST wp/v2) Taxonomy API
+  title: Bioflyte Taxonomy API
   version: wp/v2
-  summary: 'Public read surface of bioflyte.com content: press releases and news, resources (blog posts and whitepapers), marketing pages, the media library, taxonomies and site-wide search.'
-  description: 'BioFlyte publishes www.bioflyte.com on WordPress, which exposes the WordPress REST API at https://www.bioflyte.com/wp-json/. The wp/v2 namespace is anonymously readable and returns the company''s press releases and news items (the `post` type, 36 published), its Resources library of blog posts and whitepapers (the `resource` custom post type, 6 published), the nine marketing pages, a 374-item media library, taxonomies (`category`, `post_tag`, `resources-category`, `project_category`, `project_tag`, `difl_page_category`) and a site-wide search endpoint, all as JSON with page/per_page pagination and X-WP-Total / X-WP-TotalPages headers.
-
-
-    This document was DERIVED mechanically by API Evangelist from the route-discovery document served at https://www.bioflyte.com/wp-json/ on 2026-08-07 — every path, method and parameter below is taken verbatim from that descriptor. BioFlyte does not publish an OpenAPI definition of its own, and this is not a BioFlyte product API: the BioTOF z200 and MailScreen z200 instruments are operated from a local Windows Command Console and have no public API. This is the content API the CMS exposes. Write operations exist on these routes but require authentication (WordPress Application Passwords over HTTP Basic); settings, themes, plugins and menus return HTTP 401 rest_forbidden anonymously.'
   contact:
     name: BioFlyte
     url: https://www.bioflyte.com/
@@ -14,6 +9,7 @@ info:
   x-derived-from: https://www.bioflyte.com/wp-json/
   x-derived-on: '2026-08-07'
   x-provider-published: false
+  description: 'Operations tagged Taxonomy across 2 of this provider''s published API definitions: bioflyte-content-openapi.yml, bioflyte-taxonomy-api-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://www.bioflyte.com/wp-json
   description: Production
@@ -205,6 +201,9 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
   /wp/v2/categories/{id}:
     get:
       operationId: getCategoriesById
@@ -433,6 +432,9 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
   /wp/v2/difl_page_category:
     get:
       operationId: getDiflPageCategory
@@ -615,6 +617,9 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
   /wp/v2/difl_page_category/{id}:
     get:
       operationId: getDiflPageCategoryById
@@ -834,6 +839,9 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
   /wp/v2/tags:
     get:
       operationId: getTags
@@ -1016,6 +1024,9 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
   /wp/v2/tags/{id}:
     get:
       operationId: getTagsById
@@ -1235,16 +1246,19 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
+    servers:
+    - url: https://www.bioflyte.com/wp-json
+      description: Production
 components:
   responses:
-    BadRequest:
-      description: Invalid parameter (rest_invalid_param).
+    Unauthorized:
+      description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-    Unauthorized:
-      description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
+    Forbidden:
+      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
       content:
         application/json:
           schema:
@@ -1255,8 +1269,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-    Forbidden:
-      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
+    BadRequest:
+      description: Invalid parameter (rest_invalid_param).
       content:
         application/json:
           schema:
@@ -1282,3 +1296,6 @@ components:
       type: http
       scheme: basic
       description: WordPress Application Passwords, advertised by the site at https://www.bioflyte.com/wp-json/ under authentication.application-passwords; authorization endpoint https://www.bioflyte.com/wp-admin/authorize-application.php. Read operations on wp/v2 are anonymous.
+x-refined-from:
+- bioflyte-content-openapi.yml
+- bioflyte-taxonomy-api-openapi.yml
