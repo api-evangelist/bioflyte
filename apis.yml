@@ -200,6 +200,8 @@ apis:
   humanURL: https://portal.bioflyte.com/
   baseURL: https://portal.bioflyte.com
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
