@@ -1,11 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Bioflyte Organization API
+  title: AdminWeb Organization API
   version: '1.0'
-  description: 'Operations tagged Organization across 2 of this provider''s published API definitions: bioflyte-organization-api-openapi.yml, bioflyte-portal-openapi-original.json. Each path carries the servers of the definition it was published in.'
-servers:
-- url: https://portal.bioflyte.com
-  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Organization
 paths:
@@ -30,9 +26,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load locations by org id
+      x-summary-source: derived
+      operationId: postLoadLocationsByOrgId
+      x-operation-id-source: derived
 components:
   schemas:
     ObjId:
@@ -42,6 +39,3 @@ components:
           type: string
           format: uuid
       additionalProperties: false
-x-refined-from:
-- bioflyte-organization-api-openapi.yml
-- bioflyte-portal-openapi-original.json

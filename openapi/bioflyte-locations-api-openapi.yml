@@ -1,11 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Bioflyte Locations API
+  title: AdminWeb Locations API
   version: '1.0'
-  description: 'Operations tagged Locations across 2 of this provider''s published API definitions: bioflyte-locations-api-openapi.yml, bioflyte-portal-openapi-original.json. Each path carries the servers of the definition it was published in.'
-servers:
-- url: https://portal.bioflyte.com
-  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Locations
 paths:
@@ -30,9 +26,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load location map data
+      x-summary-source: derived
+      operationId: postLoadLocationMapData
+      x-operation-id-source: derived
 components:
   schemas:
     LoadLocationMapForDeviceRequest:
@@ -48,6 +45,3 @@ components:
           type: string
           format: uuid
       additionalProperties: false
-x-refined-from:
-- bioflyte-locations-api-openapi.yml
-- bioflyte-portal-openapi-original.json

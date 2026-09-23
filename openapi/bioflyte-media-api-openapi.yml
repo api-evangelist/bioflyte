@@ -1,7 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Bioflyte Media API
+  title: BioFlyte Content API (WordPress REST wp/v2) Media API
   version: wp/v2
+  summary: 'Public read surface of bioflyte.com content: press releases and news, resources (blog posts and whitepapers), marketing pages, the media library, taxonomies and site-wide search.'
+  description: BioFlyte publishes www.bioflyte.com on WordPress, which exposes the WordPress REST API at https://www.bioflyte.com/wp-json/.
   contact:
     name: BioFlyte
     url: https://www.bioflyte.com/
@@ -9,7 +11,6 @@ info:
   x-derived-from: https://www.bioflyte.com/wp-json/
   x-derived-on: '2026-08-07'
   x-provider-published: false
-  description: 'Operations tagged Media across 2 of this provider''s published API definitions: bioflyte-content-openapi.yml, bioflyte-media-api-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://www.bioflyte.com/wp-json
   description: Production
@@ -353,9 +354,6 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
-    servers:
-    - url: https://www.bioflyte.com/wp-json
-      description: Production
   /wp/v2/media/{id}:
     get:
       operationId: getMediaById
@@ -716,9 +714,6 @@ paths:
           $ref: '#/components/responses/NotFound'
       security:
       - applicationPassword: []
-    servers:
-    - url: https://www.bioflyte.com/wp-json
-      description: Production
 components:
   responses:
     Unauthorized:
@@ -727,8 +722,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-    Forbidden:
-      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
+    BadRequest:
+      description: Invalid parameter (rest_invalid_param).
       content:
         application/json:
           schema:
@@ -739,8 +734,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-    BadRequest:
-      description: Invalid parameter (rest_invalid_param).
+    Forbidden:
+      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
       content:
         application/json:
           schema:
@@ -766,6 +761,3 @@ components:
       type: http
       scheme: basic
       description: WordPress Application Passwords, advertised by the site at https://www.bioflyte.com/wp-json/ under authentication.application-passwords; authorization endpoint https://www.bioflyte.com/wp-admin/authorize-application.php. Read operations on wp/v2 are anonymous.
-x-refined-from:
-- bioflyte-content-openapi.yml
-- bioflyte-media-api-openapi.yml

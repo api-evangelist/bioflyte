@@ -1,11 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Bioflyte Filters API
+  title: AdminWeb Filters API
   version: '1.0'
-  description: 'Operations tagged Filters across 2 of this provider''s published API definitions: bioflyte-filters-api-openapi.yml, bioflyte-portal-openapi-original.json. Each path carries the servers of the definition it was published in.'
-servers:
-- url: https://portal.bioflyte.com
-  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Filters
 paths:
@@ -25,9 +21,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load is active select list
+      x-summary-source: derived
+      operationId: postLoadIsActiveSelectList
+      x-operation-id-source: derived
   /LoadRolesSelectList:
     post:
       tags:
@@ -44,9 +41,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load roles select list
+      x-summary-source: derived
+      operationId: postLoadRolesSelectList
+      x-operation-id-source: derived
   /LoadDeviceAzureSelectList:
     post:
       tags:
@@ -63,9 +61,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load device azure select list
+      x-summary-source: derived
+      operationId: postLoadDeviceAzureSelectList
+      x-operation-id-source: derived
   /LoadDeviceAzureNotBindedSelectList:
     post:
       tags:
@@ -82,9 +81,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load device azure not binded select list
+      x-summary-source: derived
+      operationId: postLoadDeviceAzureNotBindedSelectList
+      x-operation-id-source: derived
   /LoadProductTypeSelectList:
     post:
       tags:
@@ -101,9 +101,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load product type select list
+      x-summary-source: derived
+      operationId: postLoadProductTypeSelectList
+      x-operation-id-source: derived
   /LoadOrganizationTypeSelectList:
     post:
       tags:
@@ -120,9 +121,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load organization type select list
+      x-summary-source: derived
+      operationId: postLoadOrganizationTypeSelectList
+      x-operation-id-source: derived
   /LoadOrganizationStatusSelectList:
     post:
       tags:
@@ -139,9 +141,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load organization status select list
+      x-summary-source: derived
+      operationId: postLoadOrganizationStatusSelectList
+      x-operation-id-source: derived
   /LoadOrganizationSelectList:
     post:
       tags:
@@ -162,9 +165,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load organization select list
+      x-summary-source: derived
+      operationId: postLoadOrganizationSelectList
+      x-operation-id-source: derived
   /LoadDeviceStatusList:
     post:
       tags:
@@ -181,9 +185,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load device status list
+      x-summary-source: derived
+      operationId: postLoadDeviceStatusList
+      x-operation-id-source: derived
   /LoadColorCodingStatusList:
     post:
       tags:
@@ -200,9 +205,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load color coding status list
+      x-summary-source: derived
+      operationId: postLoadColorCodingStatusList
+      x-operation-id-source: derived
   /LoadDevicesSelectList:
     post:
       tags:
@@ -227,9 +233,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load devices select list
+      x-summary-source: derived
+      operationId: postLoadDevicesSelectList
+      x-operation-id-source: derived
   /LoadDevicesSelectListArchiveDependent:
     post:
       tags:
@@ -254,9 +261,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load devices select list archive dependent
+      x-summary-source: derived
+      operationId: postLoadDevicesSelectListArchiveDependent
+      x-operation-id-source: derived
   /LoadDevicesSelectListNotInLocation:
     post:
       tags:
@@ -281,9 +289,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load devices select list not in location
+      x-summary-source: derived
+      operationId: postLoadDevicesSelectListNotInLocation
+      x-operation-id-source: derived
   /LoadDevicesSelectListNotInOrganization:
     post:
       tags:
@@ -300,9 +309,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load devices select list not in organization
+      x-summary-source: derived
+      operationId: postLoadDevicesSelectListNotInOrganization
+      x-operation-id-source: derived
   /LoadAlertTypeSelectList:
     post:
       tags:
@@ -319,9 +329,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert type select list
+      x-summary-source: derived
+      operationId: postLoadAlertTypeSelectList
+      x-operation-id-source: derived
   /LoadAlertSettingsSelectList:
     post:
       tags:
@@ -338,9 +349,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert settings select list
+      x-summary-source: derived
+      operationId: postLoadAlertSettingsSelectList
+      x-operation-id-source: derived
   /LoadAlertTypeFilteredSelectList:
     post:
       tags:
@@ -357,9 +369,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert type filtered select list
+      x-summary-source: derived
+      operationId: postLoadAlertTypeFilteredSelectList
+      x-operation-id-source: derived
   /LoadAlertStatusSelectList:
     post:
       tags:
@@ -376,9 +389,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert status select list
+      x-summary-source: derived
+      operationId: postLoadAlertStatusSelectList
+      x-operation-id-source: derived
   /LoadUsersSelectList:
     post:
       tags:
@@ -399,9 +413,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load users select list
+      x-summary-source: derived
+      operationId: postLoadUsersSelectList
+      x-operation-id-source: derived
   /LoadTelemetryTypesSelectList:
     post:
       tags:
@@ -418,9 +433,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load telemetry types select list
+      x-summary-source: derived
+      operationId: postLoadTelemetryTypesSelectList
+      x-operation-id-source: derived
   /LoadSettingLayerTypesSelectList:
     post:
       tags:
@@ -437,9 +453,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load setting layer types select list
+      x-summary-source: derived
+      operationId: postLoadSettingLayerTypesSelectList
+      x-operation-id-source: derived
   /LoadConfigChangeTypeSelectList:
     post:
       tags:
@@ -456,9 +473,7 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
-x-refined-from:
-- bioflyte-filters-api-openapi.yml
-- bioflyte-portal-openapi-original.json
+      summary: Create load config change type select list
+      x-summary-source: derived
+      operationId: postLoadConfigChangeTypeSelectList
+      x-operation-id-source: derived

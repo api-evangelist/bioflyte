@@ -1,11 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Bioflyte Alert API
+  title: AdminWeb Alert API
   version: '1.0'
-  description: 'Operations tagged Alert across 2 of this provider''s published API definitions: bioflyte-alert-api-openapi.yml, bioflyte-portal-openapi-original.json. Each path carries the servers of the definition it was published in.'
-servers:
-- url: https://portal.bioflyte.com
-  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Alert
 paths:
@@ -30,9 +26,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load recipients
+      x-summary-source: derived
+      operationId: postLoadRecipients
+      x-operation-id-source: derived
   /LoadAlertSetting:
     post:
       tags:
@@ -54,9 +51,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert setting
+      x-summary-source: derived
+      operationId: postLoadAlertSetting
+      x-operation-id-source: derived
   /LoadAlertSettingDetails:
     post:
       tags:
@@ -78,9 +76,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert setting details
+      x-summary-source: derived
+      operationId: postLoadAlertSettingDetails
+      x-operation-id-source: derived
   /LoadAlertTypeInfo:
     post:
       tags:
@@ -102,9 +101,10 @@ paths:
       responses:
         '200':
           description: OK
-    servers:
-    - url: https://portal.bioflyte.com
-      description: Base URL declared by the provider in apis.yml (roadmap#122).
+      summary: Create load alert type info
+      x-summary-source: derived
+      operationId: postLoadAlertTypeInfo
+      x-operation-id-source: derived
 components:
   schemas:
     ObjId:
@@ -114,6 +114,3 @@ components:
           type: string
           format: uuid
       additionalProperties: false
-x-refined-from:
-- bioflyte-alert-api-openapi.yml
-- bioflyte-portal-openapi-original.json
