@@ -2,7 +2,17 @@
   "provider": "bioflyte",
   "sources": [
     "_original/bioflyte-portal-openapi-original.json",
-    "_ae-authored/bioflyte-content-openapi.yml"
+    "bioflyte-comments-api-openapi.yml",
+    "bioflyte-discovery-api-openapi.yml",
+    "bioflyte-media-api-openapi.yml",
+    "bioflyte-pages-api-openapi.yml",
+    "bioflyte-press-releases-api-openapi.yml",
+    "bioflyte-projects-api-openapi.yml",
+    "bioflyte-resources-api-openapi.yml",
+    "bioflyte-search-api-openapi.yml",
+    "bioflyte-settings-api-openapi.yml",
+    "bioflyte-taxonomy-api-openapi.yml",
+    "bioflyte-users-api-openapi.yml"
   ],
   "outputs": [
     "bioflyte-alert-api-openapi.yml",
@@ -28,8 +38,21 @@
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "bioflyte-comments-api-openapi.yml: previously refined output kept for 7 operation(s) no archived document covers (e.g. /wp/v2/comments get, /wp/v2/comments post, /wp/v2/comments/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-discovery-api-openapi.yml: previously refined output kept for 6 operation(s) no archived document covers (e.g. /wp/v2/statuses get, /wp/v2/statuses/{status} get, /wp/v2/taxonomies get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-media-api-openapi.yml: previously refined output kept for 7 operation(s) no archived document covers (e.g. /wp/v2/media get, /wp/v2/media post, /wp/v2/media/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-pages-api-openapi.yml: previously refined output kept for 7 operation(s) no archived document covers (e.g. /wp/v2/pages get, /wp/v2/pages post, /wp/v2/pages/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-press-releases-api-openapi.yml: previously refined output kept for 7 operation(s) no archived document covers (e.g. /wp/v2/posts get, /wp/v2/posts post, /wp/v2/posts/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-projects-api-openapi.yml: previously refined output kept for 21 operation(s) no archived document covers (e.g. /wp/v2/project get, /wp/v2/project post, /wp/v2/project/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-resources-api-openapi.yml: previously refined output kept for 14 operation(s) no archived document covers (e.g. /wp/v2/resource get, /wp/v2/resource post, /wp/v2/resource/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-search-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /wp/v2/search get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-settings-api-openapi.yml: previously refined output kept for 4 operation(s) no archived document covers (e.g. /wp/v2/settings get, /wp/v2/settings patch, /wp/v2/settings post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-taxonomy-api-openapi.yml: previously refined output kept for 21 operation(s) no archived document covers (e.g. /wp/v2/categories get, /wp/v2/categories post, /wp/v2/categories/{id} delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "bioflyte-users-api-openapi.yml: previously refined output kept for 12 operation(s) no archived document covers (e.g. /wp/v2/users get, /wp/v2/users post, /wp/v2/users/me delete); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
   "notes": [
+    "bioflyte-content-openapi.yml: WordPress site /wp-json spec, not split (roadmap#484)",
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "bioflyte-portal-openapi-original.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
     "bioflyte-portal-openapi-original.json: declared missing tag: Alert",
@@ -41,29 +64,17 @@
     "bioflyte-portal-openapi-original.json: declared missing tag: Permissions",
     "bioflyte-portal-openapi-original.json: declared missing tag: RequestHelp",
     "bioflyte-portal-openapi-original.json: declared missing tag: Test",
-    "bioflyte-content-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+1 apis, 10 total)"
   ],
   "skipped": [
     "bioflyte-alert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-client-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-comments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-filters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-pages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-permissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-press-releases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "bioflyte-requesthelp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-resources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-taxonomy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-test-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "bioflyte-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "bioflyte-test-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

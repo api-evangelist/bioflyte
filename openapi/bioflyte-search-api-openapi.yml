@@ -134,6 +134,22 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  schemas:
+    WpError:
+      type: object
+      description: The WordPress REST API error envelope (WP_Error serialized to JSON).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
   responses:
     Unauthorized:
       description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
@@ -159,22 +175,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-  schemas:
-    WpError:
-      type: object
-      description: The WordPress REST API error envelope (WP_Error serialized to JSON).
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_forbidden.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
   securitySchemes:
     applicationPassword:
       type: http

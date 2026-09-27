@@ -112,46 +112,6 @@ apis:
     url: errors/bioflyte-problem-types.yml
   - type: Examples
     url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-comments-api
-  name: BioFlyte Comments API
-  description: The Comments API from BioFlyte — 2 operation(s) for comments.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Comments
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-comments-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-discovery-api
-  name: BioFlyte Discovery API
-  description: The Discovery API from BioFlyte — 6 operation(s) for discovery.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Discovery
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-discovery-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
 - aid: bioflyte:bioflyte-files-api
   name: BioFlyte Files API
   description: The Files API from BioFlyte — 3 operation(s) for files.
@@ -216,26 +176,6 @@ apis:
     url: errors/bioflyte-problem-types.yml
   - type: Examples
     url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-media-api
-  name: BioFlyte Media API
-  description: The Media API from BioFlyte — 2 operation(s) for media.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Media
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-media-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
 - aid: bioflyte:bioflyte-organization-api
   name: BioFlyte Organization API
   description: The Organization API from BioFlyte — 1 operation(s) for organization.
@@ -246,26 +186,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/bioflyte-organization-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-pages-api
-  name: BioFlyte Pages API
-  description: The Pages API from BioFlyte — 2 operation(s) for pages.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Pages
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-pages-api-openapi.yml
   - type: Login
     url: https://portal.bioflyte.com/identity/account/login
   - type: SwaggerUI
@@ -296,48 +216,6 @@ apis:
     url: errors/bioflyte-problem-types.yml
   - type: Examples
     url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-press-releases-api
-  name: BioFlyte Press Releases API
-  description: The Press Releases API from BioFlyte — 2 operation(s) for press releases.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Press Releases
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-press-releases-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-projects-api
-  name: BioFlyte Projects API
-  description: The Projects API from BioFlyte — 6 operation(s) for projects.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Project
-  tags_raw:
-  - Projects
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-projects-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
 - aid: bioflyte:bioflyte-requesthelp-api
   name: BioFlyte Request Help API
   description: The RequestHelp API from BioFlyte — 1 operation(s) for requesthelp.
@@ -348,86 +226,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/bioflyte-requesthelp-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-resources-api
-  name: BioFlyte Resources API
-  description: The Resources API from BioFlyte — 4 operation(s) for resources.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Resources
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-resources-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-search-api
-  name: BioFlyte Search API
-  description: The Search API from BioFlyte — 1 operation(s) for search.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Search
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-search-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-settings-api
-  name: BioFlyte Settings API
-  description: The Settings API from BioFlyte — 1 operation(s) for settings.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Settings
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-settings-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-taxonomy-api
-  name: BioFlyte Taxonomy API
-  description: The Taxonomy API from BioFlyte — 6 operation(s) for taxonomy.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
-  tags:
-  - Taxonomy
-  properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-taxonomy-api-openapi.yml
   - type: Login
     url: https://portal.bioflyte.com/identity/account/login
   - type: SwaggerUI
@@ -459,28 +257,20 @@ apis:
     url: errors/bioflyte-problem-types.yml
   - type: Examples
     url: examples/bioflyte-examples.yml
-- aid: bioflyte:bioflyte-users-api
-  name: BioFlyte Users API
-  description: The Users API from BioFlyte — 3 operation(s) for users.
-  humanURL: https://portal.bioflyte.com/
-  baseURL: https://portal.bioflyte.com
+- aid: bioflyte:bioflyte-com-website-wordpress-rest
+  name: BioFlyte Website (WordPress REST)
+  description: >-
+    The public WordPress REST API (wp-json) of the BioFlyte website at www.bioflyte.com: the route index
+    of the site's content management system, catalogued as one site surface rather than as separate APIs.
+  baseURL: https://www.bioflyte.com/wp-json
   tags:
-  - User
-  tags_raw:
-  - Users
+  - WordPress
+  x-surface: platform-generated
+  x-platform: wordpress
+  x-platform-surface: rest
   properties:
-  - type: OpenAPI
-    url: openapi/bioflyte-users-api-openapi.yml
-  - type: Login
-    url: https://portal.bioflyte.com/identity/account/login
-  - type: SwaggerUI
-    url: https://portal.bioflyte.com/swagger/index.html
-  - type: DataModel
-    url: data-model/bioflyte-data-model.yml
-  - type: ErrorCatalog
-    url: errors/bioflyte-problem-types.yml
-  - type: Examples
-    url: examples/bioflyte-examples.yml
+  - type: Documentation
+    url: https://www.bioflyte.com/wp-json
 x-enrichment:
   date: '2026-08-07'
   status: enriched

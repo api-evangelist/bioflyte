@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: BioFlyte Content API (WordPress REST wp/v2) Press Releases…
+  title: BioFlyte Content API (WordPress REST wp/v2) … Press…
   version: wp/v2
   summary: 'Public read surface of bioflyte.com content: press releases and news, resources (blog posts and whitepapers), marketing pages, the media library, taxonomies and site-wide search.'
   description: BioFlyte publishes www.bioflyte.com on WordPress, which exposes the WordPress REST API at https://www.bioflyte.com/wp-json/.
@@ -859,6 +859,22 @@ paths:
       security:
       - applicationPassword: []
 components:
+  schemas:
+    WpError:
+      type: object
+      description: The WordPress REST API error envelope (WP_Error serialized to JSON).
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
   responses:
     Unauthorized:
       description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
@@ -884,22 +900,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/WpError'
-  schemas:
-    WpError:
-      type: object
-      description: The WordPress REST API error envelope (WP_Error serialized to JSON).
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_forbidden.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
   securitySchemes:
     applicationPassword:
       type: http
