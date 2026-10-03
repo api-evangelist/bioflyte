@@ -64,7 +64,7 @@
     "bioflyte-portal-openapi-original.json: declared missing tag: Permissions",
     "bioflyte-portal-openapi-original.json: declared missing tag: RequestHelp",
     "bioflyte-portal-openapi-original.json: declared missing tag: Test",
-    "apis.yml register: written (+1 apis, 10 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "bioflyte-alert-api-openapi.yml: previously refined output, superseded by openapi/_original/",

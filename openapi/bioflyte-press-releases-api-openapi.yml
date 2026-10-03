@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: BioFlyte Content API (WordPress REST wp/v2) … Press…
+  title: BioFlyte Content API (WordPress REST wp/v2) … Press… Press…
   version: wp/v2
   summary: 'Public read surface of bioflyte.com content: press releases and news, resources (blog posts and whitepapers), marketing pages, the media library, taxonomies and site-wide search.'
   description: BioFlyte publishes www.bioflyte.com on WordPress, which exposes the WordPress REST API at https://www.bioflyte.com/wp-json/.
@@ -859,6 +859,31 @@ paths:
       security:
       - applicationPassword: []
 components:
+  responses:
+    NotFound:
+      description: No route or resource matched (rest_no_route / rest_post_invalid_id).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WpError'
+    Unauthorized:
+      description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WpError'
+    Forbidden:
+      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WpError'
+    BadRequest:
+      description: Invalid parameter (rest_invalid_param).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WpError'
   schemas:
     WpError:
       type: object
@@ -875,31 +900,6 @@ components:
           properties:
             status:
               type: integer
-  responses:
-    Unauthorized:
-      description: Authentication required or rejected (rest_forbidden / rest_not_logged_in).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/WpError'
-    BadRequest:
-      description: Invalid parameter (rest_invalid_param).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/WpError'
-    NotFound:
-      description: No route or resource matched (rest_no_route / rest_post_invalid_id).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/WpError'
-    Forbidden:
-      description: Authenticated but not permitted (rest_cannot_view / rest_forbidden).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/WpError'
   securitySchemes:
     applicationPassword:
       type: http
