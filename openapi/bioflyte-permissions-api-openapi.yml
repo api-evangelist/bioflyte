@@ -107,15 +107,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ObjIdNullable:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          format: uuid
-      additionalProperties: false
     RolesForUserReq:
       type: object
       properties:
@@ -166,6 +157,15 @@ components:
           items:
             type: integer
             format: int32
+      additionalProperties: false
+    ObjIdNullable:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+          format: uuid
       additionalProperties: false
     PermissionsReq:
       type: object
