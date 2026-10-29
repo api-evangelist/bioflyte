@@ -64,18 +64,148 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BioFlyte, Inc. is an Albuquerque, New Mexico biodefense instrument company founded in 2020 that
-builds fieldable aerosol time-of-flight mass spectrometers for identifying airborne biological and
-low-volatility chemical threats — the BioTOF z200 for critical infrastructure and the MailScreen
-z200 for mail and parcel screening.
+BioFlyte, Inc. is an Albuquerque, New Mexico based biodefense instrument company founded in 2020 by Charles Call that commercializes a fieldable class of aerosol time-of-flight mass spectrometers for identifying airborne biological and low-volatility chemical threats. Its BioTOF z200 bioaerosol identifier autonomously collects, detects and identifies airborne biothreats for critical-infrastructure sites such as airports, arenas, transit hubs and federal buildings, and its MailScreen z200 workstation identifies hazardous biological powders in mail and parcels. The instruments pair an aerosol sample collector with robotic sample handling, archiving and UV-laser ionization, then match the resulting mass spectra against a threat library using AI/ML algorithms; the threat library and software updates are delivered through the cloud and the sensor is operated locally from a Windows-based tablet Command Console. BioFlyte has raised a $1.25M seed round (2020), a $6.1M Series A (2022) and a $5.4M Series B (2023), holds a U.S. Department of Homeland Security SAFETY Act Qualified Anti-Terrorism Technology designation and a U.S. Air Force SBIR Phase II contract, and has run deployments and pilots with Pittsburgh International Airport, SoBran and Los Alamos National Laboratory. BioFlyte publishes no developer program, API documentation, SDK, portal or pricing page. It does run two machine-readable API surfaces that a member of the public can reach: the fleet and alerting API behind its customer portal at portal.bioflyte.com, an ASP.NET Core service ("AdminWeb") whose OpenAPI 3.0.1 description is served openly at /swagger/v1/swagger.json even though every one of its 40 operations redirects an unauthenticated caller to a login page; and the anonymously readable WordPress REST API (wp/v2) on www.bioflyte.com, which serves the press-release newsroom, the Resources library of blog posts and whitepapers, the marketing pages, the media library, taxonomies and site search as JSON.
 
-BioFlyte publishes no developer program, API documentation, SDK or pricing. Two machine-readable
-API surfaces are reachable without credentials and are profiled here:
+**Areas:** Company · Biodefense · Biothreat Detection · Mass Spectrometry · Aerosol Monitoring · Homeland Security · Critical Infrastructure · Public Safety · Sensors · Hardware · Artificial Intelligence · Content
 
-- **Customer Portal API (AdminWeb)** — https://portal.bioflyte.com/swagger/v1/swagger.json —
-  BioFlyte's own OpenAPI 3.0.1, served openly, describing 40 device-fleet, alerting, location and
-  permission operations. The description is public; every operation returns 302 to a login page.
-- **Content API (WordPress REST wp/v2)** — https://www.bioflyte.com/wp-json/wp/v2 — anonymously
-  readable press releases, whitepapers, pages, media, taxonomies and search.
+## BioFlyte on APIs.io
 
-- https://www.bioflyte.com/
+Everything profiled for BioFlyte is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bioflyte/](https://apis.io/providers/bioflyte/)** — or go straight to one of the APIs or properties below.
+
+### APIs (10)
+
+- [BioFlyte Alert API](https://apis.io/apis/bioflyte/bioflyte-alert-api/) — The Alert API from BioFlyte — 4 operation(s) for alert.
+- [BioFlyte Client API](https://apis.io/apis/bioflyte/bioflyte-client-api/) — The Client API from BioFlyte — 1 operation(s) for client.
+- [BioFlyte Files API](https://apis.io/apis/bioflyte/bioflyte-files-api/) — The Files API from BioFlyte — 3 operation(s) for files.
+- [BioFlyte Filters API](https://apis.io/apis/bioflyte/bioflyte-filters-api/) — The Filters API from BioFlyte — 22 operation(s) for filters.
+- [BioFlyte Locations API](https://apis.io/apis/bioflyte/bioflyte-locations-api/) — The Locations API from BioFlyte — 1 operation(s) for locations.
+- [BioFlyte Organization API](https://apis.io/apis/bioflyte/bioflyte-organization-api/) — The Organization API from BioFlyte — 1 operation(s) for organization.
+- [BioFlyte Permissions API](https://apis.io/apis/bioflyte/bioflyte-permissions-api/) — The Permissions API from BioFlyte — 4 operation(s) for permissions.
+- [BioFlyte Request Help API](https://apis.io/apis/bioflyte/bioflyte-requesthelp-api/) — The RequestHelp API from BioFlyte — 1 operation(s) for requesthelp.
+- [BioFlyte Test API](https://apis.io/apis/bioflyte/bioflyte-test-api/) — The Test API from BioFlyte — 3 operation(s) for test.
+- [BioFlyte Website (WordPress REST)](https://apis.io/apis/bioflyte/bioflyte-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the BioFlyte website at www.bioflyte.com: the route index of the site's content management system, catalogued as…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Bioflyte Event Surface](https://apis.io/asyncapis/bioflyte/bioflyte-event-surface/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bioflyte-content](https://apis.io/servers/bioflyte/bioflyte-content/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Bioflyte Agentic Access](https://apis.io/agentic-access/bioflyte/bioflyte-agentic-access/)
+
+#### Collections (22)
+
+Postman and Open Collection request collections.
+
+- [AdminWeb Alert API](https://apis.io/collections/bioflyte/open-bioflyte-alert-api/)
+- [AdminWeb Client API](https://apis.io/collections/bioflyte/open-bioflyte-client-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Comments API](https://apis.io/collections/bioflyte/open-bioflyte-comments-api/)
+- [BioFlyte Content API (WordPress REST wp/v2)](https://apis.io/collections/bioflyte/open-bioflyte-content/)
+- [BioFlyte Content API (WordPress REST wp/v2) Discovery API](https://apis.io/collections/bioflyte/open-bioflyte-discovery-api/)
+- [AdminWeb Files API](https://apis.io/collections/bioflyte/open-bioflyte-files-api/)
+- [AdminWeb Filters API](https://apis.io/collections/bioflyte/open-bioflyte-filters-api/)
+- [AdminWeb Locations API](https://apis.io/collections/bioflyte/open-bioflyte-locations-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Media API](https://apis.io/collections/bioflyte/open-bioflyte-media-api/)
+- [AdminWeb Organization API](https://apis.io/collections/bioflyte/open-bioflyte-organization-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Pages API](https://apis.io/collections/bioflyte/open-bioflyte-pages-api/)
+- [AdminWeb Permissions API](https://apis.io/collections/bioflyte/open-bioflyte-permissions-api/)
+- [AdminWeb](https://apis.io/collections/bioflyte/open-bioflyte-portal-openapi-original/)
+- [BioFlyte Content API (WordPress REST wp/v2) Press Releases API](https://apis.io/collections/bioflyte/open-bioflyte-press-releases-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Projects API](https://apis.io/collections/bioflyte/open-bioflyte-projects-api/)
+- [AdminWeb Request Help API](https://apis.io/collections/bioflyte/open-bioflyte-requesthelp-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Resources API](https://apis.io/collections/bioflyte/open-bioflyte-resources-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Search API](https://apis.io/collections/bioflyte/open-bioflyte-search-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Settings API](https://apis.io/collections/bioflyte/open-bioflyte-settings-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Taxonomy API](https://apis.io/collections/bioflyte/open-bioflyte-taxonomy-api/)
+- [AdminWeb Test API](https://apis.io/collections/bioflyte/open-bioflyte-test-api/)
+- [BioFlyte Content API (WordPress REST wp/v2) Users API](https://apis.io/collections/bioflyte/open-bioflyte-users-api/)
+
+#### Overlays (2)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Bioflyte Content Overlay](https://apis.io/overlays/bioflyte/bioflyte-content-overlay/)
+- [Bioflyte Portal Overlay](https://apis.io/overlays/bioflyte/bioflyte-portal-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bioflyte Authentication](https://apis.io/security/bioflyte/bioflyte-authentication/)
+- [Bioflyte Domain Security](https://apis.io/security/bioflyte/bioflyte-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.bioflyte.com/)
+- [Blog](https://www.bioflyte.com/resources/)
+- [Terms of service](https://www.bioflyte.com/terms/)
+- [Privacy policy](https://www.bioflyte.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 25.8** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 33.6 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 25.6 |
+| Access clarity | 27.6 |
+
+**Agent readiness 21.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bioflyte/](https://apis.io/providers/bioflyte/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BioFlyte: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bioflyte/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
